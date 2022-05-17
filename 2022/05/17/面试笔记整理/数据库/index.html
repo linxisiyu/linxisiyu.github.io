@@ -1,0 +1,754 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>宇汐的时光录 | 宇汐的时光录</title><meta name="author" content="宇汐"><meta name="copyright" content="宇汐"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="我相信缓慢，平和，细水长流的力量——踏实，冷静。  MySQL1.基础1.左右外连接2.视图的好处2.索引1.什么是索引MySQL官方对索引的定义为：索引（Index）是帮助MySQL高效获取数据的数据结构。 可以理解为一种排好序的数据结构.可以帮助快速查找数据 有什么优点?  使用索引最大的优点就是减少磁盘的IO次数.从而提高查询效率 创建唯一索引.可以保证数据库中每一行数据的唯一型 在多表连">
+<meta property="og:type" content="article">
+<meta property="og:title" content="宇汐的时光录">
+<meta property="og:url" content="http://example.com/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
+<meta property="og:site_name" content="宇汐的时光录">
+<meta property="og:description" content="我相信缓慢，平和，细水长流的力量——踏实，冷静。  MySQL1.基础1.左右外连接2.视图的好处2.索引1.什么是索引MySQL官方对索引的定义为：索引（Index）是帮助MySQL高效获取数据的数据结构。 可以理解为一种排好序的数据结构.可以帮助快速查找数据 有什么优点?  使用索引最大的优点就是减少磁盘的IO次数.从而提高查询效率 创建唯一索引.可以保证数据库中每一行数据的唯一型 在多表连">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png">
+<meta property="article:published_time" content="2022-05-17T01:48:37.719Z">
+<meta property="article:modified_time" content="2022-05-16T07:05:21.582Z">
+<meta property="article:author" content="宇汐">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E6%95%B0%E6%8D%AE%E5%BA%93/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 宇汐","link":"链接: ","source":"来源: 宇汐的时光录","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '宇汐的时光录',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-16 15:05:21'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/header.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 联系我</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">宇汐的时光录</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 联系我</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-17T01:48:37.719Z" title="发表于 2022-05-17 09:48:37">2022-05-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-16T07:05:21.582Z" title="更新于 2022-05-16 15:05:21">2022-05-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">10.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>32分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>我相信缓慢，平和，细水长流的力量——踏实，冷静。</p>
+</blockquote>
+<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h3 id="1-基础"><a href="#1-基础" class="headerlink" title="1.基础"></a>1.基础</h3><h4 id="1-左右外连接"><a href="#1-左右外连接" class="headerlink" title="1.左右外连接"></a>1.左右外连接</h4><h4 id="2-视图的好处"><a href="#2-视图的好处" class="headerlink" title="2.视图的好处"></a>2.视图的好处</h4><h3 id="2-索引"><a href="#2-索引" class="headerlink" title="2.索引"></a>2.索引</h3><h4 id="1-什么是索引"><a href="#1-什么是索引" class="headerlink" title="1.什么是索引"></a>1.什么是索引</h4><p>MySQL官方对索引的定义为：<strong>索引（Index）是帮助MySQL高效获取数据的数据结构。</strong></p>
+<p>可以理解为一种排好序的数据结构.可以帮助快速查找数据</p>
+<p><strong>有什么优点?</strong></p>
+<ul>
+<li>使用索引最大的优点就是<strong>减少磁盘的IO次数</strong>.从而提高查询效率</li>
+<li>创建唯一索引.可以保证数据库中每一行数据的唯一型</li>
+<li>在多表连接查询的时候.可以加速表与表之间的连接速度</li>
+<li>在有分组和排序的条件下.使用索引可以显著减少查询中分组和排序的时间</li>
+</ul>
+<p><strong>有什么缺点?</strong></p>
+<ul>
+<li>创建和维护索引会<strong>耗费时间</strong>.随着数据增大.耗费时间也增大</li>
+<li>索引需要占据额外的<strong>磁盘空间</strong>.如果索引过多.那么索引文件可能比数据文件还要大</li>
+<li>索引提高了查询速度.但是会<strong>降低增删改的速度</strong>.在进行更新表的时候.还需要动态维护索引</li>
+</ul>
+<h4 id="2-索引类型有哪些"><a href="#2-索引类型有哪些" class="headerlink" title="2.索引类型有哪些"></a>2.索引类型有哪些</h4><ul>
+<li><p><strong>聚簇索引</strong>: 是以<strong>主键的大小</strong>作为页和目录的排序规则.在叶子结点上存放<strong>表中所有的列</strong></p>
+<p><strong>优点</strong>: </p>
+<p>相比非聚簇索引<strong>查询速度更快</strong>.对根据主键<strong>排序查找和范围查找时</strong>速度非常快.因为叶子节点就是存放的数据.可以快速查找到某一范围然后直接返回数据.不需要进行回表操作<br><strong>缺点:</strong></p>
+<p><strong>插入的速度依赖插入的顺序</strong>.按照主键的顺序插入是最快的方式，否则将会出现页分裂，严重影响性能。因此，对于InnoDB表，我们一般都会定义一个自增的ID列为主键</p>
+<p><strong>更新聚簇索引列的代价很高</strong>.因为会强制InnoDB将每个被更新的行移动到新的位置。插入的时候会面临页分裂的问题。页分裂会导致表占用更多的磁盘空间</p>
+<p> <strong>当搜索条件是主键的时候聚簇索引才会发挥作用</strong>.如果想以其他列为条件搜索.如果还是聚簇索引.那么 就会从头遍历</p>
+</li>
+<li><p><strong>二级索引</strong>: 是以<strong>索引列的大小</strong>作为页和目录的排序规则.在叶子结点上存放的是<strong>索引列和主键值</strong></p>
+<p><strong>优点:</strong></p>
+<p>减少了出现行移动或者数据页分裂时二级索引的维护工作（当数据需要更新的时候，二级索引不需要修改，只需要修改聚簇索引，一个表只能有一个聚簇索引，其他的都是二级索引，这样只需要修改聚簇索引就可以了，不需要重新构建二级索引）</p>
+<p>可以根据不同的列的条件进行查找.更加灵活</p>
+<p><strong>缺点:</strong></p>
+<p>每次查找到数据之后需要进行回表操作.效率比聚簇索引低</p>
+<p>二级索引所保存值可能比想象中的大.因为它存储了主键中的信息</p>
+</li>
+<li><p><strong>联合索引</strong></p>
+<p>同时以多个列的大小作为排序规则，也就是同时为多个列建立索引</p>
+</li>
+<li><p><strong>覆盖索引</strong></p>
+<p>InnoDB存储引擎支持覆盖索引（covering index，或称索引覆盖），即从辅助索引中就可以得到查询的记录（此 时不能够使用select *操作，只能对特定的索引字段进行select），而不需要查询聚集索引中的记录。</p>
+<p>使用覆盖索引的一个好处是不包含整行记录的所有信息，故其大小要远小于聚簇索引，从而提高查询效率</p>
+<p><strong>为何要进行回表操作?直接把完整用户记录放在叶子结点不行吗?</strong></p>
+<p>如果把完整的用户记录放到叶子节点是可以不用回表。但是太占地方了，相当于每建立一棵B+树都需要把所有的用户记录再都拷贝一遍， 这就有点太浪费存储空间了。<br>因为这种按照非主键列建立的B+树需要一次回表操作才可以定位到完整的用户记录，所以这种B+树也被称为二级索引(英文名 secondary index)，或者辅助索引。由于我们使用的是c2列的大小作为B+树的排序规则，所以我们也称这个B+树是为c2列建立的索引。</p>
+<p>非聚簇索引的存在不影响数据在聚簇索引中的组织，所以一张表可以有多个非聚簇索引。</p>
+<p><strong>前缀索引</strong></p>
+<p>如果字符串过长的话.我们可以取字符串的前几个字符作为索引列.前缀其实也是排好序的.可以减少索引的大小</p>
+<p>但是这种方式无法支持使用索引进行排序</p>
+</li>
+</ul>
+<h4 id="3-如何创建索引"><a href="#3-如何创建索引" class="headerlink" title="3.如何创建索引"></a>3.如何创建索引</h4><p><strong>1.</strong> <strong>创建表的时候创建索引</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE book( </span><br><span class="line">    book_id INT . </span><br><span class="line">    book_name VARCHAR(100). </span><br><span class="line">    authors VARCHAR(100). </span><br><span class="line">    info VARCHAR(100) . </span><br><span class="line">    comment VARCHAR(100). </span><br><span class="line">    year_publication YEAR. </span><br><span class="line">    INDEX(year_publication) </span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.</strong> <strong>在已经存在的表上创建索引</strong></p>
+<p><strong>1.</strong> <strong>使用ALTER TABLE语句创建索引</strong> ALTER TABLE语句创建索引的基本语法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE table_name ADD [UNIQUE | FULLTEXT | SPATIAL] [INDEX | KEY] [index_name] (col_name[length]....) [ASC | DESC]</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.</strong> <strong>使用CREATE INDEX创建索引</strong> CREATE INDEX语句可以在已经存在的表上添加索引，在MySQL中， </p>
+<p>CREATE INDEX被映射到一个ALTER TABLE语句上，基本语法结构为： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE [UNIQUE | FULLTEXT | SPATIAL] INDEX index_name ON table_name (col_name[length]....) [ASC | DESC]</span><br></pre></td></tr></table></figure>
+
+<p><strong>删除索引</strong> </p>
+<p><strong>1.</strong> <strong>使用ALTER TABLE删除索引</strong> ALTER TABLE删除索引的基本语法格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE table_name DROP INDEX index_name;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.</strong> <strong>使用DROP INDEX语句删除索引</strong> DROP INDEX删除索引的基本语法格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP INDEX index_name ON table_name;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-索引数据结构"><a href="#3-索引数据结构" class="headerlink" title="3.索引数据结构"></a>3.索引数据结构</h4><p>B+树</p>
+<p>B+树是为磁盘设计的一种<strong>多路平衡查找树</strong>。在B+树中，所有记录节点都是按键值的大小顺序存放在同一层的叶子节点上，由各叶子节点指针进行连接。 </p>
+<p>B+索引在数据库中有一个特点是<strong>高扇出性</strong>，因此在数据库中，B+树的高度一般都在2～4层，这也就是说查 </p>
+<p>找某一键值的行记录时最多只需要2到4次IO</p>
+<h4 id="4-B-树与B树的区别-为啥用B-树"><a href="#4-B-树与B树的区别-为啥用B-树" class="headerlink" title="4.B+树与B树的区别?为啥用B+树?"></a>4.B+树与B树的区别?为啥用B+树?</h4><p><strong>为何不用平衡二叉树和B树?</strong></p>
+<p>平衡二叉树树的查找时间复杂度是O(log2N)，已经很不错了，但还是不适合作为索引结构</p>
+<p>我们知道磁盘的读取的速度较内存中的读取速度而言是差了好几个级别</p>
+<p>因为索引是存在于索引文件中，是<strong>存在于磁盘中</strong>的。索引通常是很大的，无法一次将全部索引加载到内存当中，每次只能从磁盘中读取一个磁盘页的数据到内存中。也就是<strong>预读</strong>.随着数据量的增大.每次磁盘预读中的很多数据是用不上的数据。因此，平衡二叉树没能利用好磁盘预读的提供的数据。然后又由于高度大（较B树而言），所以进行的磁盘IO操作更多。这就需要适合索引的结构应该尽可能减少磁盘IO次数.就有了B树和B+树</p>
+<p>B+树和B树是<strong>多路平衡查找树</strong>.它们的一大特点就是”矮胖”</p>
+<p><strong>为何不用B树?</strong> </p>
+<p>B+ 树，是 B树的一种变体，查询性能更好。 </p>
+<ol>
+<li><p>B+ 树的<strong>内节点不保存数据</strong>，所以磁盘页能容纳更多节点元素，更 “矮胖”。</p>
+<p>B 树不管叶子节点还是非叶子节 点，都会保存数据，这样导致在非叶子节点中能保存的指针数量变少，指针少的情况下要保存大量数据，只能增加树的高度，导致 IO 操作变多，查询性能变低 </p>
+</li>
+<li><p>B+ 树查询必须查找到叶子节点，B树只要匹配到即可直接返回。因此 B+ 树查找更<strong>稳定</strong>(并不慢).而B树如果数据在根节点最快，在叶子节点最慢，查询效率不稳定。 </p>
+</li>
+<li><p>对于范围查找来说，B+ 树只需遍历叶子节点链表即可，并且不需要排序操作，因为叶子节点已经对索引进行 </p>
+<p>了排序操作。B树却需要重复地中序遍历，找到所有的范围内的节点。</p>
+</li>
+</ol>
+<p><strong>为何不用哈希表做索引</strong></p>
+<p>1.<strong>模糊查找不支持</strong>：哈希表是把索引字段映射成对应的哈希码然后再存放在对应的位置， </p>
+<p>这样的话，如果我们要进行模糊查找的话，显然哈希表这种结构是不支持的，只能遍历这个 </p>
+<p>表。而 B + 树则可以通过最左前缀原则快速找到对应的数据。 </p>
+<p>2.<strong>范围查找不支持</strong>：如果我们要进行范围查找，例如查找 ID 为 100 ~ 400 的人，哈希表同 </p>
+<p>样不支持，只能遍历全表。 </p>
+<p>3.<strong>哈希冲突问题：</strong>索引字段通过哈希映射成哈希码，如果很多字段都刚好映射到相同值的 </p>
+<p>哈希码的话，那么形成的索引结构将会是一条很长的链表，这样的话，查找的时间就会大大 </p>
+<p>增加。</p>
+<h4 id="5-索引设计原则"><a href="#5-索引设计原则" class="headerlink" title="5.索引设计原则"></a>5.索引设计原则</h4><ol>
+<li><p><strong>只为用于搜索.排序或分组的列创建索引</strong></p>
+<p>我们只为where字句中的字段或者连接子句中连接的列.或者像order by和group by子句中的列创建索引</p>
+</li>
+<li><p><strong>创建索引需考虑索引列中不重复的个数</strong><br>如果该索引列中的重复值过于多.那么就可能进行多次回表操作.比如性别这一列.如果建立索引.他的性能可能还不如不建立索引好.</p>
+</li>
+<li><p><strong>索引列的类型尽量要小</strong></p>
+<p>索引列越小.占用的存储空间就越小.在一个数据页就能存放更多的记录.从而提高查询效率</p>
+<p>对于主键来说更加实用.因为聚簇索引会存储主键值.二级索引除了存储索引列的值也会存储主键值</p>
+</li>
+<li><p><strong>为列前缀建立索引</strong></p>
+<p>如果字符串过长的话.我们可以取字符串的前几个字符作为索引列.前缀其实也是排好序的.可以减少索引的大小</p>
+<p>但是这种方式无法支持使用索引进行排序</p>
+</li>
+<li><p><strong>覆盖索引</strong></p>
+<p>也就是在查询列中只包含索引列.就不需要进行回表操作了</p>
+</li>
+<li><p><strong>让索引列以列名的形式出现在搜索条件中</strong></p>
+</li>
+<li><p><strong>让主键自增.减少聚簇索引发生页面分裂的情况带来的性能损耗</strong></p>
+</li>
+<li><p><strong>避免冗余和重复索引</strong></p>
+</li>
+</ol>
+<h4 id="6-索引失效场景"><a href="#6-索引失效场景" class="headerlink" title="6.索引失效场景"></a>6.索引失效场景</h4><ol>
+<li><p>存在null值条件</p>
+<p>在设计数据库表的时候.应尽量避免某个列的值为空.如果不可避免.我们可以使用一个DEFAUT值.比如说0就代表空.如果为空.索引的值是少于表的记录总数的.就会进行全表扫描.</p>
+</li>
+<li><p>不满足最左前缀原则</p>
+<p>一个联合索引.如果查询的时候没有使用到最左边的索引.那么就会导致这个索引失效</p>
+</li>
+<li><p>使用前置like模糊查询</p>
+<p>模糊搜索时，尽量采用后置%，因为走索引时，其会从头开始去匹配索引列，这时候是可以找到的，如果采用前%，那么查索引就会更倾向于使用全表扫描.</p>
+</li>
+<li><p>隐式类型转换</p>
+<p>当查询条件存在隐式转换时，索引可能会失效。如下示例： tx_no在数据库是varchar类型，但是我们传入的参数却使用了int或者bigint其他类型。</p>
+</li>
+<li><p>where条件后面对索引列使用了函数运算或者算数运算[to_char、to_date、upper、lower、to_number、trunc等函数].索引就会失效</p>
+</li>
+<li><p>or前后存在非索引的列</p>
+</li>
+<li><p>查询条件使用了&lt;&gt;、NOT、in、not exists非等值查询.就会倾向于全秒扫描</p>
+</li>
+</ol>
+<h4 id="8-最左匹配原则"><a href="#8-最左匹配原则" class="headerlink" title="8.最左匹配原则"></a>8.最左匹配原则</h4><p>最左匹配原则就是指在联合索引中，如果你的 SQL 语句中用到了联合索引中的最左边的索引，那么这条 SQL 语句就可以利用这个联合索引去进行匹配。</p>
+<h4 id="10普通索引与唯一索引如何选择"><a href="#10普通索引与唯一索引如何选择" class="headerlink" title="10普通索引与唯一索引如何选择"></a>10普通索引与唯一索引如何选择</h4><p><strong>二者区别:</strong></p>
+<p>对于普通索引来说，查找到满足条件的第一个记录后，需要查找下一个记录，直到碰到第一 </p>
+<p>个不满足条件的记录停止检索。 </p>
+<p>对于唯一索引来说，由于索引定义了唯一性，查找到第一个满足条件的记录后，就会停止继续检 </p>
+<p>索。</p>
+<p>这两类索引在查询能力上是没差别的，主要考虑的是对更新性能的影响。普通索引 和 change buffer 的配合使用，性能更好.所以建议尽量选择普通索引.唯一索引的更新就不能使用change buffer </p>
+<p><strong>如何选择?</strong></p>
+<p><strong>首先， 业务正确性优先 。</strong>我们的前提是“业务代码已经保证不会写入重复数据”的情况下，讨论性能 </p>
+<p>问题。</p>
+<p>如果业务不能保证，或者业务就是要求数据库来做约束，那么没得选，必须创建唯一索引。 </p>
+<p><strong>然后，在一些“ 归档库 ”的场景，</strong>你是可以考虑使用唯一索引的。比如，线上数据只需要保留半年， </p>
+<p>然后历史数据保存在归档库。这时候，归档数据已经是确保没有唯一键冲突了。要提高归档效率， </p>
+<p>可以考虑把表里面的唯一索引改成普通索引。 </p>
+<h3 id="3-事务"><a href="#3-事务" class="headerlink" title="3.事务"></a>3.事务</h3><p>事务是一组逻辑操作单元.使数据从一种状态转换到另一种状态它必须要具备ACID四种属性.也就是原子性.一致性.隔离性.持久性</p>
+<p><strong>原子性（atomicity）：</strong> </p>
+<p>原子性是指事务是一个不可分割的工作单位，要么全部提交，要么全部失败回滚。 </p>
+<p><strong>一致性（consistency）：</strong> </p>
+<p>一致性是指事务执行前后，数据从一个合法性状态变换到另外一个合法性状态 .数据保持一致。这种状态是语义上的而不是语法上的，跟具体的业务有关。</p>
+<p><strong>隔离型（isolation）：</strong>事务的隔离性是指一个事务的执行 不能被其他事务干扰 ，并发执行的各个事务之间不能互相干扰。 </p>
+<p><strong>持久性（durability）：</strong> </p>
+<p>持久性是指一个事务一旦被提交，它对数据库中数据的改变就是 永久性的 ，接下来的其他操作和数据库 </p>
+<p>故障不应该对其有任何影响。  </p>
+<h4 id="数据库隔离级别"><a href="#数据库隔离级别" class="headerlink" title="数据库隔离级别"></a>数据库隔离级别</h4><p><strong>数据库并发问题</strong></p>
+<p><strong>1.</strong> <strong>脏写（</strong> Dirty Write <strong>）</strong> </p>
+<p>两个事务在未提交的状态下,一个事务修改了另一个事务修改过的数据,如果一个事务回滚了,那么另一个事务也变回了前一个事务回滚前的数据.</p>
+<p>据，那就意味着发生了 脏写 </p>
+<p><strong>2.</strong> <strong>脏读（</strong> Dirty Read <strong>）</strong> </p>
+<p>对于两个事务 A、B，A 读取 了已经被 B 更新但还没有被提交 的字段。 之后若 事务B 回滚 ，A 读取 的内容就是 临时且无效 的。 </p>
+<p><strong>3.</strong> <strong>不可重复读（</strong> Non**-**Repeatable Read <strong>）</strong> </p>
+<p>对于两个事务Session A、Session B，Session A 读取 了一个字段，然后 Session B 更新提交了该字段。 之后 </p>
+<p>Session A 再次读取 同一个字段， 值就不同了。就发生了不可重复读。 </p>
+<p><strong>4.</strong> <strong>幻读（</strong> Phantom <strong>）</strong> </p>
+<p>对于两个事务Session A、Session B, Session A 从一个表中 读取 了一个字段, 然后 Session B 在该表中 插 </p>
+<p>入 了一些新的行。 之后, 如果 Session A 再次读取 同一个表, 就会多出几行。那就意味着发生了幻读。 </p>
+<p><strong>四种隔离级别</strong></p>
+<p><strong>READ UNCOMMITTED ：读未提交</strong>，一个事务都可读取到另一个事务没有提交的结果。</p>
+<p>不能避免脏读、不可重复读、幻读。 </p>
+<p><strong>READ COMMITTED ：读已提交</strong>，一个事务要等到另一个事务提交之后才能看到更新的数据,</p>
+<p>可以避免脏读，但不可重复读、幻读问题仍然存在。 </p>
+<p><strong>REPEATABLE READ ：可重复读</strong>，事务A读到一条数据之后，事务B对该数据进行了修改并提 </p>
+<p>交，那么事务A再读该数据，读到的还是原来的内容。</p>
+<p>可以避免脏读、不可重复读，但幻读问题仍然存在。这是MySQL的默认隔离级别。 </p>
+<p><strong>SERIALIZABLE ：可串行化</strong>，最高隔离级别,事务串行化顺序执行,在这个事务持续期间，禁止 </p>
+<p>其他事务对该表执行插入、更新和删除操作。</p>
+<p>所有的并发问题都可以避免，但性能十分低下。能避免脏读、不可重复读和幻读。</p>
+<p><strong>幻读与不可重复读的区别?幻读举个例子?innodb如何解决幻读?</strong></p>
+<p>**区别:**幻读和不可重复读都是读取到了另一个事务所提交的数据,不同的是不可从复读可能发生在更新,删除操作中,而幻读发生在添加操作中.</p>
+<p>**例子:**比如说现在有两个事务A,B,事务A要把表中某列大于1的数据都改为其他值,这个时候事务B对表中插入了一个新的记录,这个记录恰好那一列也是大于1的.这时候事务A再查看表,就会发现有一个数据没有修改,就好像出现幻觉一样.</p>
+<p>**解决:**在可重复读的隔离级别下，Innodb使用MVCC和next-key locks解决幻读，MVCC解决的是普通读（快照读）的幻读，next-key locks解决的是当前读情况下的幻读。</p>
+<p> <strong>当前读</strong>读取的是记录的最新版本（最新数据，而不是历史版本的数据），读取时还要保证其他并发事务不能修改当前记录，会对读取的记录进行加锁。加锁的查询或者对数据进行更新操作都会进行当前度读</p>
+<p>会用<strong>next-key locks加锁</strong>的方式来锁住本条记录以及索引区间,被锁住的范围,其他事务无法操作.就比如说上面那个例子,在RR的情况下,假设使用当前读,锁住了列为1的记录,以及大于1的范围,就无法进行插入操作</p>
+<p><strong>快照读</strong>又叫一致性读，读取的是快照数据。<strong>不加锁的简单的</strong> <strong>SELECT</strong> <strong>都属于快照读</strong>，即不加锁的非阻塞 </p>
+<p>读.</p>
+<p><strong>MVCC 的实现依赖于：隐藏字段、Undo Log、Read View。</strong></p>
+<ol>
+<li>首先获取事务的版本号，也就是事务 ID； </li>
+<li>获取 ReadView； </li>
+<li>查询得到的数据，然后与 ReadView 中的事务版本号进行比较； </li>
+<li>如果不符合 ReadView 规则，就需要从 Undo Log 中获取历史快照； </li>
+<li>最后返回符合规则的数据。 </li>
+</ol>
+<h4 id="MySQL各种锁"><a href="#MySQL各种锁" class="headerlink" title="MySQL各种锁"></a>MySQL各种锁</h4><p><img src="C:\Users\张哲\AppData\Roaming\Typora\typora-user-images\1649506587177.png" alt="1649506587177"></p>
+<p>一般来看数据库锁可以分为悲观锁和乐观锁两类</p>
+<p><strong>悲观锁</strong>是在操作数据的时候总是认为有其他操作回来修改数据,它会在更改的时候就把数据锁住,更改完之后才会释放锁.</p>
+<p><strong>悲观锁</strong>主要有表锁,行锁,页锁.</p>
+<p>在MyISAM中只用到了表锁,不会有死锁问题,开销很小,但是并发能力差</p>
+<p>Innodb中实现了行锁和表锁,锁的粒度变小了.并发能力变强了,但是开销变大了,也有可能出现死锁问题</p>
+<p>Innodb是通过给索引上的索引列加锁,只有通过索引条件检索时,才会使用行锁,否则使用表锁</p>
+<p>表锁和行锁都分为共享锁和排他锁,更新锁是为了解决行锁升级的死锁问题.</p>
+<p>Innodb中表锁和行锁一起用,为了提高效率才会有意向锁.</p>
+<p><strong>乐观锁</strong>认为对同一数据的并发操作不会总发生，属于小概率事件，不用每次都对数据上锁，但是在更新 </p>
+<p>的时候会判断一下在此期间别人有没有去更新这个数据,它通常是通过程序来实现,比如说CAS</p>
+<p><strong>读锁 ：也称为 共享锁 、英文用 S 表示</strong>。针对同一份数据，多个事务的读操作可以同时进行而不会 </p>
+<p>互相影响，相互不阻塞的。 </p>
+<p><strong>写锁 ：也称为 排他锁 、英文用 X 表示。</strong>当前写操作没有完成前，它会阻断其他写锁和读锁。这样 </p>
+<p>就能确保在给定的时间里，只有一个事务能执行写入，并防止其他用户读取正在写入的同一资源。 </p>
+<p><strong>死锁</strong> :死锁是指两个或多个事务在同一资源上相互占用，并请求锁定对方占用的资源，从而导致恶性循环。</p>
+<p><strong>全局锁</strong>:全局锁就是对 整个数据库实例加锁。当你需要让整个库处于 只读状态 的时候，可以使用这个命令，之后 </p>
+<p>其他线程的以下语句会被阻塞：数据更新语句（数据的增删改）、数据定义语句（包括建表、修改表结 </p>
+<p>构等）和更新类事务的提交语句。全局锁的典型使用 场景 是：做全库逻辑备份 。</p>
+<h3 id="4-存储引擎"><a href="#4-存储引擎" class="headerlink" title="4.存储引擎"></a>4.存储引擎</h3><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>MyISAM</strong></th>
+<th><strong>InnoDB</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>外键</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>事务</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>行表锁</td>
+<td>表锁</td>
+<td>都支持</td>
+</tr>
+<tr>
+<td>缓存</td>
+<td>只缓存索引，不缓存真实数据</td>
+<td>不仅缓存索引还要缓存真实数据，对内存要求较</td>
+</tr>
+<tr>
+<td>自带系统表使用</td>
+<td>支持</td>
+<td>高，而且内存大小对性能有决定性的影响 不支持</td>
+</tr>
+<tr>
+<td>关注点</td>
+<td>性能：节省资源、消耗少、简单业</td>
+<td>事务:并发写,事务,更大资源</td>
+</tr>
+<tr>
+<td>默认安装</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>默认使用</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+</tbody></table>
+<p><strong>其他存储引擎了解</strong></p>
+<p><strong>Memory</strong> <strong>引擎：置于内存的表</strong> </p>
+<p>Memory采用的逻辑介质是 内存 ， 响应速度很快 ，但是当mysqld守护进程崩溃的时候 数据会丢失 。另 </p>
+<p>外，要求存储的数据是数据长度不变的格式，比如，Blob和Text类型的数据不可用(长度不固定的)。 </p>
+<p><strong>……</strong></p>
+<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><h3 id="1-redis常用数据类型，每种数据类型应用场景"><a href="#1-redis常用数据类型，每种数据类型应用场景" class="headerlink" title="1.redis常用数据类型，每种数据类型应用场景"></a>1.redis常用数据类型，每种数据类型应用场景</h3><p><img src="C:\Users\张哲\AppData\Roaming\Typora\typora-user-images\1649508662918.png" alt="1649508662918"></p>
+<p><strong>Redis通用命令</strong>:通用指令是部分数据类型的，都可以使用的指令，常见的有：</p>
+<p><strong>KEYS</strong>：查看符合模板的所有key</p>
+<p><strong>DEL</strong>：删除一个指定的key</p>
+<p><strong>EXISTS</strong>：判断key是否存在</p>
+<p><strong>EXPIRE</strong>：给一个key设置有效期，有效期到期时该key会被自动删除</p>
+<p><strong>TTL</strong>：查看一个KEY的剩余有效期</p>
+<h4 id="1-String"><a href="#1-String" class="headerlink" title="1.String"></a>1.String</h4><p>String类型，也就是字符串类型，是Redis中最简单的存储类型。</p>
+<p>其value是字符串，不过根据字符串的格式不同，又可以分为3类：</p>
+<p><strong>string</strong>：普通字符串</p>
+<p><strong>int</strong>：整数类型，可以做自增、自减操作</p>
+<p><strong>float</strong>：浮点类型，可以做自增、自减操作</p>
+<p>不管是哪种格式，底层都是<strong>字节数组</strong>形式存储，只不过是编码方式不同。字符串类型的最大空间不能超过512m.</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">String类型的常见命令</span></span><br><span class="line"><span class="attr">SET：添加或者修改已经存在的一个String类型的键值对</span></span><br><span class="line"><span class="attr">GET：根据key获取String类型的value</span></span><br><span class="line"><span class="attr">MSET：批量添加多个String类型的键值对</span></span><br><span class="line"><span class="attr">MGET：根据多个key获取多个String类型的value</span></span><br><span class="line"><span class="attr">INCR：让一个整型的key自增1</span></span><br><span class="line"><span class="attr">INCRBY</span>:<span class="string">让一个整型的key自增并指定步长，例如：incrby num 2 让num值自增2</span></span><br><span class="line"><span class="attr">INCRBYFLOAT：让一个浮点类型的数字自增并指定步长</span></span><br><span class="line"><span class="attr">SETNX：添加一个String类型的键值对，前提是这个key不存在，否则不执行</span></span><br><span class="line"><span class="attr">SETEX：添加一个String类型的键值对，并且指定有效期</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Redis没有类似MySQL中的Table的概念，我们该如何区分不同类型的key呢？</strong></p>
+<p>Redis的key允许有多个单词形成层级结构，多个单词之间用’:’隔开，格式如下：</p>
+<p>项目名:业务名:类型:id</p>
+<h4 id="2-Hash"><a href="#2-Hash" class="headerlink" title="2.Hash"></a>2.Hash</h4><p>Hash类型，也叫散列，其value是一个无序字典，类似于Java中的HashMap结构。</p>
+<p>String结构是将对象序列化为JSON字符串后存储，当需要修改对象某个字段时很不方便</p>
+<p>Hash结构可以将对象中的每个字段独立存储，可以针对单个字段做CRUD</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Hash的常见命令有：</span></span><br><span class="line"><span class="attr">HSET</span> <span class="string">key field value：添加或者修改hash类型key的field的值</span></span><br><span class="line"><span class="attr">HGET</span> <span class="string">key field：获取一个hash类型key的field的值</span></span><br><span class="line"><span class="attr">HMSET：批量添加多个hash类型key的field的值</span></span><br><span class="line"><span class="attr">HMGET：批量获取多个hash类型key的field的值</span></span><br><span class="line"><span class="attr">HGETALL：获取一个hash类型的key中的所有的field和value</span></span><br><span class="line"><span class="attr">HKEYS：获取一个hash类型的key中的所有的field</span></span><br><span class="line"><span class="attr">HVALS：获取一个hash类型的key中的所有的value</span></span><br><span class="line"><span class="attr">HINCRBY</span>:<span class="string">让一个hash类型key的字段值自增并指定步长</span></span><br><span class="line"><span class="attr">HSETNX：添加一个hash类型的key的field值，前提是这个field不存在，否则不执行</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-List"><a href="#3-List" class="headerlink" title="3.List"></a>3.List</h4><p>Redis中的List类型与Java中的LinkedList类似，可以看做是一个双向链表结构。既可以支持正向检索和也可以支持反向检索。特征也与LinkedList类似：</p>
+<p><strong>有序</strong></p>
+<p><strong>元素可以重复</strong></p>
+<p><strong>插入和删除快</strong></p>
+<p><strong>查询速度一般</strong></p>
+<p>常用来存储一个有序数据，例如：<strong>朋友圈点赞列表，评论列表</strong>等。</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">List的常见命令有：</span></span><br><span class="line"><span class="attr">LPUSH</span> <span class="string">key  element ... ：向列表左侧插入一个或多个元素</span></span><br><span class="line"><span class="attr">LPOP</span> <span class="string">key：移除并返回列表左侧的第一个元素，没有则返回nil</span></span><br><span class="line"><span class="attr">RPUSH</span> <span class="string">key  element ... ：向列表右侧插入一个或多个元素</span></span><br><span class="line"><span class="attr">RPOP</span> <span class="string">key：移除并返回列表右侧的第一个元素</span></span><br><span class="line"><span class="attr">LRANGE</span> <span class="string">key star end：返回一段角标范围内的所有元素</span></span><br><span class="line"><span class="attr">BLPOP和BRPOP：与LPOP和RPOP类似，只不过在没有元素时等待指定时间，而不是直接返回nil</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>如何利用List结构模拟一个栈?</strong></p>
+<p>•入口和出口在同一边</p>
+<p><strong>如何利用List结构模拟一个队列?</strong></p>
+<p>•入口和出口在不同边</p>
+<p><strong>如何利用List结构模拟一个阻塞队列?</strong></p>
+<p>•入口和出口在不同边</p>
+<p>•出队时采用BLPOP或BRPOP</p>
+<h4 id="4-Set"><a href="#4-Set" class="headerlink" title="4.Set"></a>4.Set</h4><p>Redis的Set结构与Java中的HashSet类似，可以看做是一个value为null的HashMap。因为也是一个hash表，因此具备与HashSet类似的特征：</p>
+<p><strong>无序</strong></p>
+<p><strong>元素不可重复</strong></p>
+<p><strong>查找快</strong></p>
+<p><strong>支持交集、并集、差集等功能</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Set的常见命令有：</span><br><span class="line">SADD key member ... ：向set中添加一个或多个元素</span><br><span class="line">SREM key member ... : 移除set中的指定元素</span><br><span class="line">SCARD key： 返回set中元素的个数</span><br><span class="line">SISMEMBER key member：判断一个元素是否存在于set中</span><br><span class="line">SMEMBERS：获取set中的所有元素</span><br><span class="line">SINTER key1 key2 ... ：求key1与key2的交集</span><br><span class="line">SADD key member ... ：向set中添加一个或多个元素</span><br><span class="line">SREM key member ... : 移除set中的指定元素</span><br><span class="line">SCARD key： 返回set中元素的个数</span><br><span class="line">SISMEMBER key member：判断一个元素是否存在于set中</span><br><span class="line">SMEMBERS：获取set中的所有元素</span><br><span class="line">SINTER key1 key2 ... ：求key1与key2的交集</span><br><span class="line">SDIFF key1 key2 ...  ：求key1与key2的差集</span><br><span class="line">SUNION key1 key2 ... ：求key1和key2的并集</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="5-ZSet"><a href="#5-ZSet" class="headerlink" title="5.ZSet"></a>5.ZSet</h4><p>Redis的SortedSet是一个可排序的set集合，与Java中的TreeSet有些类似，但底层数据结构却差别很大。SortedSet中的每一个元素都带有一个score属性，可以基于score属性对元素排序，底层的实现是一个跳表（SkipList）加 hash表。</p>
+<p>SortedSet具备下列特性：</p>
+<p><strong>可排序</strong></p>
+<p><strong>元素不重复</strong></p>
+<p><strong>查询速度快</strong></p>
+<p>因为SortedSet的可排序特性，经常被用来实现<strong>排行榜</strong>这样的功能。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">SortedSet的常见命令有：</span><br><span class="line">ZADD key score member：添加一个或多个元素到sorted set ，如果已经存在则更新其score值</span><br><span class="line">ZREM key member：删除sorted set中的一个指定元素</span><br><span class="line">ZSCORE key member : 获取sorted set中的指定元素的score值</span><br><span class="line">ZRANK key member：获取sorted set 中的指定元素的排名</span><br><span class="line">ZCARD key：获取sorted set中的元素个数</span><br><span class="line">ZCOUNT key min max：统计score值在给定范围内的所有元素的个数</span><br><span class="line">ZINCRBY key increment member：让sorted set中的指定元素自增，步长为指定的increment值</span><br><span class="line">ZRANGE key min max：按照score排序后，获取指定排名范围内的元素</span><br><span class="line">ZRANGEBYSCORE key min max：按照score排序后，获取指定score范围内的元素</span><br><span class="line">ZDIFF、ZINTER、ZUNION：求差集、交集、并集</span><br><span class="line">注意：所有的排名默认都是升序，如果要降序则在命令的Z后面添加REV即可</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-GEO-BitMap-HyperLog-了解"><a href="#6-GEO-BitMap-HyperLog-了解" class="headerlink" title="6.GEO  BitMap HyperLog(了解)"></a>6.GEO  BitMap HyperLog(了解)</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">**GEO** </span><br><span class="line">Redis 3.2 中增加了对GEO类型的支持。GEO，Geographic，地理信息的缩写。该类型，就是元素的2维坐标，在地图上就是经纬度。redis基于该类型，提供了经纬度设置，查询，范围查询，距离查询，经纬度Hash等常见操作。</span><br><span class="line"></span><br><span class="line">**BitMap** </span><br><span class="line">现代计算机用二进制（位） 作为信息的基础单位， 1个字节等于8位,Redis提供了Bitmaps这个“数据类型”可以实现对位的操作</span><br><span class="line">（1） Bitmaps本身不是一种数据类型， 实际上它就是字符串（key-value） ， 但是它可以对字符串的位进行操作。</span><br><span class="line">（2） Bitmaps单独提供了一套命令， 所以在Redis中使用Bitmaps和使用字符串的方法不太相同。 可以把Bitmaps想象成一个以位为单位的数组， 数组的每个单元只能存储0和1， 数组的下标在Bitmaps中叫做偏移量。</span><br><span class="line"></span><br><span class="line">**HyperLog**</span><br><span class="line">在工作当中，我们经常会遇到与统计相关的功能需求，比如统计网站PV（PageView页面访问量）,可以使用Redis的incr、incrby轻松实现。</span><br><span class="line">但像UV（UniqueVisitor，独立访客）、独立IP数、搜索记录数等需要去重和计数的问题如何解决？这种求集合中不重复元素个数的问题称为基数问题。</span><br><span class="line">解决基数问题有很多种方案：</span><br><span class="line">（1）数据存储在MySQL表中，使用distinct count计算不重复个数</span><br><span class="line">（2）使用Redis提供的hash、set、bitmaps等数据结构来处理</span><br><span class="line">以上的方案结果精确，但随着数据不断增加，导致占用空间越来越大，对于非常大的数据集是不切实际的。</span><br><span class="line">能否能够降低一定的精度来平衡存储空间？Redis推出了HyperLogLog</span><br><span class="line">Redis HyperLogLog 是用来做基数统计的算法，HyperLogLog 的优点是，在输入元素的数量或者体积非常非常大时，计算基数所需的空间总是固定的、并且是很小的。</span><br><span class="line">在 Redis 里面，每个 HyperLogLog 键只需要花费 12 KB 内存，就可以计算接近 2^64 个不同元素的基数。这和计算基数时，元素越多耗费内存就越多的集合形成鲜明对比。</span><br><span class="line">但是，因为 HyperLogLog 只会根据输入元素来计算基数，而不会储存输入元素本身，所以 HyperLogLog 不能像集合那样，返回输入的各个元素。</span><br><span class="line">什么是基数?</span><br><span class="line">比如数据集 &#123;1, 3, 5, 7, 5, 7, 8&#125;， 那么这个数据集的基数集为 &#123;1, 3, 5 ,7, 8&#125;, 基数(不重复元素个数)为5。 基数估计就是在误差可接受的范围内，快速计算基数。</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-redis缓存机制，缓存击穿，穿透，雪崩"><a href="#2-redis缓存机制，缓存击穿，穿透，雪崩" class="headerlink" title="2.redis缓存机制，缓存击穿，穿透，雪崩"></a>2.redis缓存机制，缓存击穿，穿透，雪崩</h3><p><strong>缓存</strong>就是数据交换的缓冲区（称作Cache），是存贮数据的临时地方，一般读写性能较高。</p>
+<p>**缓存作用:**降低后端负载,提高读写效率，降低响应时间</p>
+<p><strong>缓存成本</strong>:数据一致性成本,代码维护成本,运维成本</p>
+<h4 id="1-缓存更新策略"><a href="#1-缓存更新策略" class="headerlink" title="1.缓存更新策略"></a>1.缓存更新策略</h4><table>
+<thead>
+<tr>
+<th></th>
+<th align="left">内存淘汰</th>
+<th>超时淘汰</th>
+<th>主动更新</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>说明</td>
+<td align="left">不用自己维护,利用Redis的内存淘汰机制，当内存不足时自动淘汰部分数据.下次查询时更新缓存。</td>
+<td>给缓存添加过期时间,到期后自动删除缓存,下次查询时更新缓存</td>
+<td>编写业务逻辑,在修改数据库的同时更新缓存</td>
+</tr>
+<tr>
+<td>一致性</td>
+<td align="left">差</td>
+<td>一般</td>
+<td>好</td>
+</tr>
+<tr>
+<td>维护成本</td>
+<td align="left">无</td>
+<td>低</td>
+<td>高</td>
+</tr>
+</tbody></table>
+<p>内存淘汰策略可以在配置文件中进行配置,推荐使用allkeys-lru(lately recently used):当内存不够时,移除最近最少使用的key</p>
+<p>业务场景：</p>
+<p>低一致性需求：使用内存淘汰机制。例如店铺类型的查询缓存</p>
+<p>高一致性需求：主动更新，并以超时剔除作为兜底方案。例如店铺详情查询的缓存</p>
+<p><strong>主动更新策略</strong></p>
+<p><strong>由缓存调用者在更新数据库的同时更新缓存</strong></p>
+<p>操作缓存和数据库时有三个问题需要考虑：</p>
+<p><strong>1.删除缓存还是更新缓存？</strong></p>
+<p>更新缓存：每次更新数据库都更新缓存，无效写操作较多</p>
+<p>删除缓存：更新数据库时让缓存失效，查询时再更新缓存</p>
+<p><strong>2.如何保证缓存与数据库的操作的同时成功或失败？</strong></p>
+<p>单体系统，将缓存与数据库操作放在一个事务</p>
+<p>分布式系统，利用TCC等分布式事务方案</p>
+<p><strong>3.先操作缓存还是先操作数据库？</strong></p>
+<p>先操作数据库，再删除缓存</p>
+<p><strong>总结: 缓存更新策略的最佳实践方案：</strong></p>
+<p>1.低一致性需求：使用Redis自带的内存淘汰机制</p>
+<p>2.高一致性需求：主动更新，并以超时剔除作为兜底方案</p>
+<p>读操作：</p>
+<p>缓存命中则直接返回</p>
+<p>缓存未命中则查询数据库，并写入缓存，设定超时时间</p>
+<p>写操作：</p>
+<p>先写数据库，然后再删除缓存</p>
+<p>要确保数据库与缓存操作的原子性</p>
+<h4 id="2-缓存穿透"><a href="#2-缓存穿透" class="headerlink" title="2.缓存穿透"></a>2.缓存穿透</h4><p>缓存穿透是指缓存和数据库中都没有请求的数据,这些请求会直接打到数据库上,如果同一时间有大量请求进来的话，就会给数据库造成巨大的查询压力。</p>
+<table>
+<thead>
+<tr>
+<th>解决</th>
+<th>缓存空对象</th>
+<th>布隆过滤</th>
+<th>其他方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>思路</td>
+<td>对于请求不存在的数据也在redis中建立缓存,值为空,并设置一个较短的过期时间</td>
+<td>利用布隆过滤算法，在请求进入Redis之前先判断是否存在，如果不存在则直接拒绝请求</td>
+<td>增强id的复杂度，避免被猜测id规律</td>
+</tr>
+<tr>
+<td>优点</td>
+<td>实现简单,维护方便</td>
+<td>内存占用少</td>
+<td>做好数据的基础格式校验</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>额外的内存消耗,短期数据不一致</td>
+<td>实现复杂,存在误判的可能性</td>
+<td>加强用户权限校验</td>
+</tr>
+</tbody></table>
+<h4 id="3-缓存雪崩"><a href="#3-缓存雪崩" class="headerlink" title="3.缓存雪崩"></a>3.缓存雪崩</h4><p>缓存雪崩是指在同一时段大量的缓存key同时失效或者Redis服务宕机，导致大量请求到达数据库，带来巨大压力。</p>
+<p><strong>解决方案：</strong></p>
+<p>给不同的Key的TTL添加随机值</p>
+<p>利用Redis集群提高服务的可用性</p>
+<p>给缓存业务添加降级限流策略</p>
+<p>给业务添加多级缓存</p>
+<h4 id="4-缓存击穿"><a href="#4-缓存击穿" class="headerlink" title="4.缓存击穿"></a>4.缓存击穿</h4><p><strong>缓存击穿问题</strong>也叫热点Key问题，就是一个被<strong>高并发访问</strong>并且<strong>缓存重建业务较复杂</strong>的key突然失效了，无数的请求访问会在瞬间给数据库带来巨大的冲击。</p>
+<p><strong>解决:互斥锁与逻辑过期</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>互斥锁</th>
+<th>逻辑过期</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>思路</td>
+<td>给缓存重建过程加锁，确保重建过程只有一个线程执行，其它线程等待,直到缓存构建完后重新读取缓存</td>
+<td>热点key缓存永不过期，而是设置一个逻辑过期时间，查询到数据时通过对逻辑过期时间判断，如果过期了,进行重建缓存,也通过互斥锁进行,但它是利用独立线程异步执行,其它线程无需等待,直接查询到旧数据即可.</td>
+</tr>
+<tr>
+<td>优点</td>
+<td>没有额外的内存消耗,保证了一致性,实现简单</td>
+<td>线程不用等待,性能较好</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>等待导致性能下降,有死锁风险</td>
+<td>不保证一致性,有额外的内存消耗,实现复杂</td>
+</tr>
+</tbody></table>
+<h4 id="5-缓存预热"><a href="#5-缓存预热" class="headerlink" title="5.缓存预热"></a>5.缓存预热</h4><p>缓存预热就是系统上线后，先将相关的数据构建到缓存中，这样就可以避免用户请求的时候直接查库。</p>
+<h4 id="6-缓存降级"><a href="#6-缓存降级" class="headerlink" title="6.缓存降级"></a>6.缓存降级</h4><p>缓存降级是指缓存失效或缓存服务器挂掉的情况下，不去访问数据库，直接返回默认数据或访问服务的内存数据。</p>
+<h3 id="3Redis是单线程的吗-为什么这么快"><a href="#3Redis是单线程的吗-为什么这么快" class="headerlink" title="3Redis是单线程的吗?为什么这么快"></a>3Redis是单线程的吗?为什么这么快</h3><p><strong>严格来说，Redis Server是多线程的，只是它的请求处理整个流程是单线程处理的</strong></p>
+<p>Redis内部还有其他工作线程在后台执行，它负责异步执行某些比较耗时的任务，例如AOF每秒刷盘、AOF文件重写都是在另一个线程中完成的。</p>
+<p>Redis是使用内存来进行数据的存储,使用内存存储数据，可以避免频繁的进行写盘操作，大大降低响应时间</p>
+<p><strong>优点:没有了多线程上下文切换的性能损耗</strong></p>
+<p><strong>没有了访问共享资源加锁的性能损耗</strong></p>
+<p><strong>开发和调试非常友好，可维护性高</strong></p>
+<p><strong>缺点:如果前一个请求发生耗时比较久的操作，那么整个Redis就会阻塞住，其他请求也无法进来，直到这个耗时久的操作处理完成并返回，其他请求才能被处理到。</strong></p>
+<h3 id="4-Redis两种备份机制-持久化机制"><a href="#4-Redis两种备份机制-持久化机制" class="headerlink" title="4.Redis两种备份机制(持久化机制)"></a>4.Redis两种备份机制(持久化机制)</h3><h4 id="1-RBD"><a href="#1-RBD" class="headerlink" title="1.RBD"></a>1.RBD</h4><p>RDB全称Redis Database Backup file（Redis数据备份文件），也被叫做Redis数据快照。简单来说就是<strong>把内存中的所有数据都记录到磁盘中。当Redis实例故障重启后，从磁盘读取快照文件，恢复数据。</strong>快照文件称为RDB文件，默认是保存在当前运行目录。</p>
+<p><strong>执行时机</strong></p>
+<p>RDB持久化在四种情况下会执行：</p>
+<ul>
+<li><p>执行save命令</p>
+<p>save命令会导致主进程执行RDB，这个过程中其它所有命令都会被阻塞。只有在数据迁移时可能用到。</p>
+</li>
+<li><p>执行bgsave命令</p>
+<p>这个命令执行后会开启独立进程完成RDB，主进程可以持续处理用户请求，不受影响。</p>
+</li>
+<li><p>Redis停机时</p>
+<p>Redis停机时会执行一次save命令，实现RDB持久化。</p>
+</li>
+<li><p>触发RDB条件时</p>
+<p>Redis内部有触发RDB的机制，可以在redis.conf文件中找到，格式如下：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 900秒内，如果至少有1个key被修改，则执行bgsave ， 如果是save &quot;&quot; 则表示禁用RDB</span></span><br><span class="line"><span class="attr">save</span> <span class="string">900 1  </span></span><br><span class="line"><span class="attr">save</span> <span class="string">300 10  </span></span><br><span class="line"><span class="attr">save</span> <span class="string">60 10000 </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># RDB的其它配置也可以在redis.conf文件中设置：</span></span><br><span class="line"><span class="comment"># 是否压缩 ,建议不开启，压缩也会消耗cpu，磁盘的话不值钱</span></span><br><span class="line"><span class="attr">rdbcompression</span> <span class="string">yes</span></span><br><span class="line"><span class="comment"># RDB文件名称</span></span><br><span class="line"><span class="attr">dbfilename</span> <span class="string">dump.rdb  </span></span><br><span class="line"><span class="comment"># 文件保存的路径目录</span></span><br><span class="line"><span class="attr">dir</span> <span class="string">./ </span></span><br></pre></td></tr></table></figure>
+
+<p><strong>RDB方式bgsave的基本流程？</strong></p>
+<ul>
+<li>fork主进程得到一个子进程，共享内存空间</li>
+<li>子进程读取内存数据并写入新的RDB文件</li>
+<li>用新RDB文件替换旧的RDB文件</li>
+</ul>
+<p><strong>RDB会在什么时候执行？save 60 1000代表什么含义？</strong></p>
+<ul>
+<li>默认是服务停止时</li>
+<li>代表60秒内至少执行1000次修改则触发RDB</li>
+</ul>
+<p><strong>RDB的缺点？</strong></p>
+<ul>
+<li>RDB执行间隔时间长，两次RDB之间写入数据有丢失的风险</li>
+<li>fork子进程、压缩、写出RDB文件都比较耗时</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-AOF"><a href="#2-AOF" class="headerlink" title="2.AOF"></a>2.AOF</h4><p>AOF全称为Append Only File（追加文件）。<strong>Redis处理的每一个写命令都会记录在AOF文件，可以看做是命令日志文件。</strong></p>
+<p>AOF默认是关闭的，需要修改redis.conf配置文件来开启AOF</p>
+<p>AOF的命令记录的频率也可以通过redis.conf文件来配：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 表示每执行一次写命令，立即记录到AOF文件</span></span><br><span class="line"><span class="attr">appendfsync</span> <span class="string">always </span></span><br><span class="line"><span class="comment"># 写命令执行完先放入AOF缓冲区，然后表示每隔1秒将缓冲区数据写到AOF文件，是默认方案</span></span><br><span class="line"><span class="attr">appendfsync</span> <span class="string">everysec </span></span><br><span class="line"><span class="comment"># 写命令执行完先放入AOF缓冲区，由操作系统决定何时将缓冲区内容写回磁盘</span></span><br><span class="line"><span class="attr">appendfsync</span> <span class="string">no</span></span><br></pre></td></tr></table></figure>
+
+<p>三种策略对比：</p>
+<p><img src="D:/%E6%8A%80%E6%9C%AF%E8%B5%84%E6%96%99/Redis/redis%E9%BB%91%E9%A9%AC/%E9%AB%98%E7%BA%A7/01-%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%93%E5%AD%98/assets/image-20210725151654046.png" alt="image-20210725151654046"></p>
+<p><strong>AOF文件重写</strong></p>
+<p>因为是<strong>记录命令，AOF文件会比RDB文件大的多</strong>。而且AOF会记录对同一个key的多次写操作，但只有最后一次写操作才有意义。通过执行<strong>bgrewriteaof命令</strong>，可以让AOF文件执行重写功能，用最少的命令达到相同效果。</p>
+<p>Redis也会在触发阈值时自动去重写AOF文件。阈值也可以在redis.conf中配置：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># AOF文件比上次文件 增长超过多少百分比则触发重写</span></span><br><span class="line"><span class="attr">auto-aof-rewrite-percentage</span> <span class="string">100</span></span><br><span class="line"><span class="comment"># AOF文件体积最小多大以上才触发重写 </span></span><br><span class="line"><span class="attr">auto-aof-rewrite-min-size</span> <span class="string">64mb </span></span><br></pre></td></tr></table></figure>
+
+<h4 id="4-对比"><a href="#4-对比" class="headerlink" title="4.对比"></a>4.对比</h4><p>RDB和AOF各有自己的优缺点，如果对数据安全性要求较高，在实际开发中往往会<strong>结合</strong>两者来使用。</p>
+<p><img src="D:/%E6%8A%80%E6%9C%AF%E8%B5%84%E6%96%99/Redis/redis%E9%BB%91%E9%A9%AC/%E9%AB%98%E7%BA%A7/01-%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%93%E5%AD%98/assets/image-20210725151940515.png" alt="image-20210725151940515"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">宇汐</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E6%95%B0%E6%8D%AE%E5%BA%93/">http://example.com/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E6%95%B0%E6%8D%AE%E5%BA%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">宇汐的时光录</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"><img class="prev-cover" src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E4%B8%AD%E9%97%B4%E4%BB%B6/"><img class="next-cover" src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/header.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">宇汐</div><div class="author-info__description">喜欢两个词:细水长流,静水深流</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/linxisiyu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/linxisiyu" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1841661433@qq.com" target="_blank" title="给我发邮件"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/485044334?spm_id_from=333.1007.0.0" target="_blank" title="我的B站"><i class="fab fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">细水长流,静水深流</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL"><span class="toc-number">1.</span> <span class="toc-text">MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E7%A1%80"><span class="toc-number">1.1.</span> <span class="toc-text">1.基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%B7%A6%E5%8F%B3%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.左右外连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%A7%86%E5%9B%BE%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.视图的好处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%B4%A2%E5%BC%95"><span class="toc-number">1.2.</span> <span class="toc-text">2.索引</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E7%B4%A2%E5%BC%95"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.什么是索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%B4%A2%E5%BC%95%E7%B1%BB%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.索引类型有哪些</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95"><span class="toc-number">1.2.3.</span> <span class="toc-text">3.如何创建索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%B4%A2%E5%BC%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.4.</span> <span class="toc-text">3.索引数据结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-B-%E6%A0%91%E4%B8%8EB%E6%A0%91%E7%9A%84%E5%8C%BA%E5%88%AB-%E4%B8%BA%E5%95%A5%E7%94%A8B-%E6%A0%91"><span class="toc-number">1.2.5.</span> <span class="toc-text">4.B+树与B树的区别?为啥用B+树?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E7%B4%A2%E5%BC%95%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="toc-number">1.2.6.</span> <span class="toc-text">5.索引设计原则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E7%B4%A2%E5%BC%95%E5%A4%B1%E6%95%88%E5%9C%BA%E6%99%AF"><span class="toc-number">1.2.7.</span> <span class="toc-text">6.索引失效场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E6%9C%80%E5%B7%A6%E5%8C%B9%E9%85%8D%E5%8E%9F%E5%88%99"><span class="toc-number">1.2.8.</span> <span class="toc-text">8.最左匹配原则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10%E6%99%AE%E9%80%9A%E7%B4%A2%E5%BC%95%E4%B8%8E%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9"><span class="toc-number">1.2.9.</span> <span class="toc-text">10普通索引与唯一索引如何选择</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.3.</span> <span class="toc-text">3.事务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="toc-number">1.3.1.</span> <span class="toc-text">数据库隔离级别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MySQL%E5%90%84%E7%A7%8D%E9%94%81"><span class="toc-number">1.3.2.</span> <span class="toc-text">MySQL各种锁</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="toc-number">1.4.</span> <span class="toc-text">4.存储引擎</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis"><span class="toc-number">2.</span> <span class="toc-text">Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-redis%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%8C%E6%AF%8F%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">2.1.</span> <span class="toc-text">1.redis常用数据类型，每种数据类型应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-String"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.String</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Hash"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.Hash</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-List"><span class="toc-number">2.1.3.</span> <span class="toc-text">3.List</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Set"><span class="toc-number">2.1.4.</span> <span class="toc-text">4.Set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-ZSet"><span class="toc-number">2.1.5.</span> <span class="toc-text">5.ZSet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-GEO-BitMap-HyperLog-%E4%BA%86%E8%A7%A3"><span class="toc-number">2.1.6.</span> <span class="toc-text">6.GEO  BitMap HyperLog(了解)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-redis%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6%EF%BC%8C%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%EF%BC%8C%E7%A9%BF%E9%80%8F%EF%BC%8C%E9%9B%AA%E5%B4%A9"><span class="toc-number">2.2.</span> <span class="toc-text">2.redis缓存机制，缓存击穿，穿透，雪崩</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%BC%93%E5%AD%98%E6%9B%B4%E6%96%B0%E7%AD%96%E7%95%A5"><span class="toc-number">2.2.1.</span> <span class="toc-text">1.缓存更新策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.缓存穿透</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9"><span class="toc-number">2.2.3.</span> <span class="toc-text">3.缓存雪崩</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF"><span class="toc-number">2.2.4.</span> <span class="toc-text">4.缓存击穿</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E7%BC%93%E5%AD%98%E9%A2%84%E7%83%AD"><span class="toc-number">2.2.5.</span> <span class="toc-text">5.缓存预热</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E7%BC%93%E5%AD%98%E9%99%8D%E7%BA%A7"><span class="toc-number">2.2.6.</span> <span class="toc-text">6.缓存降级</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3Redis%E6%98%AF%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%90%97-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E4%B9%88%E5%BF%AB"><span class="toc-number">2.3.</span> <span class="toc-text">3Redis是单线程的吗?为什么这么快</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Redis%E4%B8%A4%E7%A7%8D%E5%A4%87%E4%BB%BD%E6%9C%BA%E5%88%B6-%E6%8C%81%E4%B9%85%E5%8C%96%E6%9C%BA%E5%88%B6"><span class="toc-number">2.4.</span> <span class="toc-text">4.Redis两种备份机制(持久化机制)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-RBD"><span class="toc-number">2.4.1.</span> <span class="toc-text">1.RBD</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-AOF"><span class="toc-number">2.4.2.</span> <span class="toc-text">2.AOF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%AF%B9%E6%AF%94"><span class="toc-number">2.4.3.</span> <span class="toc-text">4.对比</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E9%9A%8F%E5%86%99%E8%AE%B0%E5%BD%95/" title="无题"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E9%9A%8F%E5%86%99%E8%AE%B0%E5%BD%95/" title="无题">无题</a><time datetime="2022-05-17T01:48:37.740Z" title="发表于 2022-05-17 09:48:37">2022-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="无题"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="无题">无题</a><time datetime="2022-05-17T01:48:37.737Z" title="发表于 2022-05-17 09:48:37">2022-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="无题"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="无题">无题</a><time datetime="2022-05-17T01:48:37.719Z" title="发表于 2022-05-17 09:48:37">2022-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E4%B8%AD%E9%97%B4%E4%BB%B6/" title="无题"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E4%B8%AD%E9%97%B4%E4%BB%B6/" title="无题">无题</a><time datetime="2022-05-17T01:48:37.715Z" title="发表于 2022-05-17 09:48:37">2022-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/10/BufferflyTest/" title="测试Butterfly主题"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="测试Butterfly主题"/></a><div class="content"><a class="title" href="/2022/05/10/BufferflyTest/" title="测试Butterfly主题">测试Butterfly主题</a><time datetime="2022-05-10T01:17:02.000Z" title="发表于 2022-05-10 09:17:02">2022-05-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 宇汐</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">嘿嘿,欢迎你来到这里,我们做朋友吧━(*｀∀´*)ノ亻!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

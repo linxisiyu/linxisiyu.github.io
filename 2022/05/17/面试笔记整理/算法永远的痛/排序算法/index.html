@@ -1,0 +1,327 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>宇汐的时光录 | 宇汐的时光录</title><meta name="author" content="宇汐"><meta name="copyright" content="宇汐"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="时间复杂度和空间复杂度相关知识不再记录了 1.排序中的交换方法 关于交换方法中的异或操作 ^,或者理解为无进位相加,简单来说就是相同为0,不同为1比如 0^1&#x3D;1;    1^0&#x3D;1;    0^0&#x3D;0;    1^1&#x3D;0; 相关性质:  0^N&#x3D;N    N^N&#x3D;0 异或运算满足交换律,结合律: a^b&#x3D;b^a; a^b^c&#x3D;a^(b^c) 同样一批数进行异或操作,结果一样  假设交换a和b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="宇汐的时光录">
+<meta property="og:url" content="http://example.com/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:site_name" content="宇汐的时光录">
+<meta property="og:description" content="时间复杂度和空间复杂度相关知识不再记录了 1.排序中的交换方法 关于交换方法中的异或操作 ^,或者理解为无进位相加,简单来说就是相同为0,不同为1比如 0^1&#x3D;1;    1^0&#x3D;1;    0^0&#x3D;0;    1^1&#x3D;0; 相关性质:  0^N&#x3D;N    N^N&#x3D;0 异或运算满足交换律,结合律: a^b&#x3D;b^a; a^b^c&#x3D;a^(b^c) 同样一批数进行异或操作,结果一样  假设交换a和b">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png">
+<meta property="article:published_time" content="2022-05-17T01:48:37.737Z">
+<meta property="article:modified_time" content="2022-05-17T01:47:31.674Z">
+<meta property="article:author" content="宇汐">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 宇汐","link":"链接: ","source":"来源: 宇汐的时光录","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '宇汐的时光录',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-17 09:47:31'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/header.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 联系我</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">宇汐的时光录</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 联系我</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-17T01:48:37.737Z" title="发表于 2022-05-17 09:48:37">2022-05-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-17T01:47:31.674Z" title="更新于 2022-05-17 09:47:31">2022-05-17</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>时间复杂度和空间复杂度相关知识不再记录了</p>
+<h1 id="1-排序中的交换方法"><a href="#1-排序中的交换方法" class="headerlink" title="1.排序中的交换方法"></a>1.排序中的交换方法</h1><blockquote>
+<p>关于交换方法中的异或操作 <code>^</code>,或者理解为无进位相加,简单来说就是相同为0,不同为1<br>比如 0^1=1;    1^0=1;    0^0=0;    1^1=0;</p>
+<p>相关性质:</p>
+<ol>
+<li>0^N=N    N^N=0</li>
+<li>异或运算满足交换律,结合律: a^b=b^a; a^b^c=a^(b^c)</li>
+<li>同样一批数进行异或操作,结果一样</li>
+</ol>
+<p>假设交换a和b  a=甲,b=乙</p>
+<p>a=a^b      此时a=甲^乙                     b=乙(保持不变)<br>b=a^b      此时a=甲^乙(保持不变)    b=甲^乙^乙=甲^0=甲<br>a=a^b      此时a=甲^乙^甲=乙          b=甲(保持不变)</p>
+<p>注意:使用异或的前提必须保证交换的两个值的地址不同,也就是是两块独立的内存空间</p>
+<p> &amp;运算中 1&amp;1=1,1&amp;0=0,0&amp;0=0</p>
+</blockquote>
+<blockquote>
+<p>例题:</p>
+<p>1.一个数组中有一种数出现了奇数次，其他数都出现了偶数次，怎么找到这一个数<br>2.一个数组中有两种数出现了奇数次，其他数都出现了偶数次，怎么找到这两个数<br>3.数组除某个元素仅出现一次外，其余每个元素都恰出现三次,请你找出并返回那个只出现了一次的元素</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.一个数组中有一种数出现了奇数次，其他数都出现了偶数次，怎么找到这一个数</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">solution1</span><span class="params">(<span class="type">int</span>[] arr)</span> &#123;</span><br><span class="line">	<span class="type">int</span> <span class="variable">eor</span> <span class="operator">=</span> <span class="number">0</span>;	</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> cur : arr) &#123;</span><br><span class="line">		<span class="comment">//因为有一个是奇数次,其他都是偶数次,^满足交换律,出现偶数次的直接为0</span></span><br><span class="line">		<span class="comment">//对于一个数出现奇数次的,异或一遍之后只剩它本身了</span></span><br><span class="line">		eor ^= cur;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> eor;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.一个数组中有两种数出现了奇数次，其他数都出现了偶数次，怎么找到这两个数	</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">solution2</span><span class="params">(<span class="type">int</span> []arr)</span> &#123;</span><br><span class="line">	<span class="type">int</span> eor=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> cur : arr) &#123;</span><br><span class="line">		eor ^= cur;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//假设这两个出现奇数次的是a和b</span></span><br><span class="line">	<span class="comment">//此时eor=a^b,且eor!=0,也就意味着eor必然有一位上是1</span></span><br><span class="line">	<span class="comment">//我们要提取出最右边的1</span></span><br><span class="line">	<span class="type">int</span> <span class="variable">rightOne</span> <span class="operator">=</span> eor&amp;(~eor+<span class="number">1</span>); <span class="comment">//对上一步的异或结果取反+1,与本身进行与运算,得到最右边的1</span></span><br><span class="line">	<span class="type">int</span> eor1=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> cur : arr) &#123;</span><br><span class="line">		<span class="comment">//得到两个奇数中的一个,</span></span><br><span class="line">		<span class="keyword">if</span>((cur &amp; rightOne) == <span class="number">0</span>) &#123;</span><br><span class="line">			eor1 ^= cur;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(eor + <span class="string">&quot; &quot;</span> + (eor ^ eor1));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.数组除某个元素仅出现一次外，其余每个元素都恰出现三次,请你找出并返回那个只出现了一次的元素</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">solution3</span><span class="params">(<span class="type">int</span> []arr)</span> &#123;</span><br><span class="line">	<span class="comment">//要做到的是将出现三次的元素都归零,这时候需要两个辅助变量</span></span><br><span class="line">	<span class="type">int</span> a=<span class="number">0</span>,b=<span class="number">0</span>;	</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> cur : arr) &#123;</span><br><span class="line">		<span class="comment">/*这里相同的数循环三次是0,比如说这个数是3吧</span></span><br><span class="line"><span class="comment">		第一次a^cur得到cur本身,&amp;与运算得到还是本身,此时b为0;对于b异或之后是它本身,与运算后为0; </span></span><br><span class="line"><span class="comment">		第一次得到 a=3;b=0</span></span><br><span class="line"><span class="comment">		第二次得到 a=0;b=3;</span></span><br><span class="line"><span class="comment">		第三次得到 a=0;b=0;</span></span><br><span class="line"><span class="comment">		*/</span></span><br><span class="line">		a = (a^cur) &amp; ~b;</span><br><span class="line">		b = (b^cur) &amp; ~a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-排序算法"><a href="#2-排序算法" class="headerlink" title="2.排序算法"></a>2.排序算法</h1><h2 id="1-选择排序"><a href="#1-选择排序" class="headerlink" title="1.选择排序"></a>1.选择排序</h2><blockquote>
+<p>将数组分为两个子集，排序的和未排序的，每一轮从未排序的子集中选出最小的元素，放入排序子集</p>
+<p>重复以上步骤，直到整个数组有序</p>
+<p>时间复杂度O(N^2)，额外空间复杂度O(1)</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">improt java.util.Arrays;	</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">selectSort</span><span class="params">(<span class="type">int</span> []arr)</span>&#123;</span><br><span class="line">        <span class="type">int</span> len=arr.length;</span><br><span class="line">        <span class="keyword">if</span>(arr==<span class="literal">null</span> || len&lt;<span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;len-<span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="type">int</span> minIndex=i;		<span class="comment">//得到最小的索引下标</span></span><br><span class="line">            <span class="comment">//从下一位与最小索引下标进行比较,如果比minIndex的值还小,那么把minIndex变成j</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=minIndex+<span class="number">1</span>; j&lt;len; j++)&#123;	</span><br><span class="line">                minIndex=arr[j]&lt;arr[minIndex]?j:minIndex;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//将i值与minIndex互换位置</span></span><br><span class="line">            swap(arr,i,minIndex);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-冒泡排序"><a href="#2-冒泡排序" class="headerlink" title="2.冒泡排序"></a>2.冒泡排序</h2><blockquote>
+<p>依次比较数组中相邻两个元素大小，若 a[j] &gt; a[j+1]，则交换两个元素，两两都比较一遍称为一轮冒泡，结果是让最大的元素排至最后</p>
+<p>重复以上步骤，直到整个数组有序</p>
+<p>时间复杂度O(N^2)，额外空间复杂度O(1)</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">bubleSort</span><span class="params">(<span class="type">int</span> []arr)</span>&#123;</span><br><span class="line">	    <span class="type">int</span> len=arr.length;</span><br><span class="line">	    <span class="keyword">if</span>(arr==<span class="literal">null</span> || len&lt;<span class="number">2</span>)&#123;</span><br><span class="line">	        <span class="keyword">return</span>;</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="keyword">for</span>(<span class="type">int</span> i=len-<span class="number">1</span>; i&gt;<span class="number">0</span>; i--)&#123;</span><br><span class="line">	        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>; j&lt;i; j++)&#123;</span><br><span class="line">	            <span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">	                swap(arr,j,j+<span class="number">1</span>);</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125; </span><br><span class="line">	 &#125;</span><br><span class="line">	System.out.println(<span class="string">&quot;排序后的结果: &quot;</span>+Arrays.toString(arr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3.插入排序"></a>3.插入排序</h2><blockquote>
+<p>将数组分为两个区域，排序区域和未排序区域，每一轮从未排序区域中取出第一个元素，插入到排序区域（需保证顺序）</p>
+<p>重复以上步骤，直到整个数组有序</p>
+<p>时间复杂度O(N^2)，额外空间复杂度O(1)<br>算法流程按照最差情况来估计时间复杂度</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">insertSort</span><span class="params">(<span class="type">int</span> []arr)</span>&#123;</span><br><span class="line">	    <span class="type">int</span> len=arr.length;</span><br><span class="line">	    <span class="keyword">if</span>(arr==<span class="literal">null</span> || len&lt;<span class="number">2</span>)&#123;</span><br><span class="line">	        <span class="keyword">return</span>;</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="comment">//0~0有序, 0~i想有序</span></span><br><span class="line">	    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>; i&lt;len; i++)&#123;</span><br><span class="line">	        <span class="keyword">for</span>(<span class="type">int</span> j=i-<span class="number">1</span>; j&gt;=<span class="number">0</span>&amp;&amp;arr[j]&gt;arr[j+<span class="number">1</span>]; j--)&#123;	<span class="comment">//0~i做到有序</span></span><br><span class="line">	            swap(arr,j,j+<span class="number">1</span>);</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	    System.out.println(<span class="string">&quot;插入排序的结果: &quot;</span>+Arrays.toString(arr));</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-二分法扩展"><a href="#4-二分法扩展" class="headerlink" title="4.二分法扩展"></a>4.二分法扩展</h2><blockquote>
+<ol>
+<li><p>前提：有已排序数组 A（假设已经做好）</p>
+</li>
+<li><p>定义左边界 L、右边界 R，确定搜索范围，循环执行二分查找（3、4两步）</p>
+</li>
+<li><p>获取中间索引 M = Floor((L+R) /2)</p>
+</li>
+<li><p>中间索引的值  A[M] 与待搜索的值 T 进行比较</p>
+</li>
+</ol>
+<p>  ① A[M] == T 表示找到，返回中间索引</p>
+<p>  ② A[M] &gt; T，中间值右侧的其它元素都大于 T，无需比较，中间索引左边去找，M - 1 设置为右边界，重新查找</p>
+<p>  ③ A[M] &lt; T，中间值左侧的其它元素都小于 T，无需比较，中间索引右边去找， M + 1 设置为左边界，重新查找</p>
+<ol start="5">
+<li>当 L &gt; R 时，表示没有找到，应结束循环</li>
+</ol>
+</blockquote>
+<p>1.在一个有序数组中，找某个数是否存在</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(<span class="type">int</span>[]arr,<span class="type">int</span> target)</span>&#123;</span><br><span class="line">	    <span class="type">int</span> len=arr.length;</span><br><span class="line">	    <span class="keyword">if</span>(arr==<span class="literal">null</span> || len==<span class="number">0</span>)&#123;</span><br><span class="line">	        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="type">int</span> left=<span class="number">0</span>,right=len-<span class="number">1</span>;</span><br><span class="line">	    <span class="keyword">while</span>(left&lt;=right)&#123;</span><br><span class="line">	        <span class="type">int</span> mid=(left+right)&gt;&gt;&gt;<span class="number">1</span>;</span><br><span class="line">	        <span class="keyword">if</span>(arr[mid]&gt;target)&#123;</span><br><span class="line">	            right=mid-<span class="number">1</span>;</span><br><span class="line">	        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(arr[mid]&lt;target)&#123;</span><br><span class="line">	            left=mid+<span class="number">1</span>;</span><br><span class="line">	        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	            <span class="keyword">return</span> mid;</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.在一个有序数组中，找&gt;=某个数最左侧的位置</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getLeftIndex</span><span class="params">(<span class="type">int</span> []arr,<span class="type">int</span> value)</span> &#123;</span><br><span class="line">		<span class="type">int</span> len=arr.length;</span><br><span class="line">	    <span class="keyword">if</span>(arr==<span class="literal">null</span> || len&lt;<span class="number">2</span>)&#123;</span><br><span class="line">	        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="type">int</span> left=<span class="number">0</span>,right=len-<span class="number">1</span>,index=-<span class="number">1</span>;</span><br><span class="line">    	<span class="comment">//这个需要二分完毕才可以得到结果</span></span><br><span class="line">	    <span class="keyword">while</span>(left&lt;=right) &#123;</span><br><span class="line">	    	<span class="type">int</span> mid=(left+right)&gt;&gt;&gt;<span class="number">1</span>;</span><br><span class="line">	    	<span class="keyword">if</span>(arr[mid]&gt;=value) &#123;</span><br><span class="line">	    		index=mid;</span><br><span class="line">	    		right=mid-<span class="number">1</span>;</span><br><span class="line">	    	&#125;<span class="keyword">else</span>  &#123;</span><br><span class="line">	    		left=mid+<span class="number">1</span>;</span><br><span class="line">	    	&#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="keyword">return</span> index;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3.局部最小值问题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//局部最小值问题: 数组无序,相邻的数一定不相等,寻找一个局部最小值的位置</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getSmallIndex</span><span class="params">(<span class="type">int</span> []arr)</span> &#123;</span><br><span class="line">		<span class="type">int</span> len=arr.length;</span><br><span class="line">		<span class="keyword">if</span>(arr==<span class="literal">null</span> || len==<span class="number">0</span>)	<span class="keyword">return</span> -<span class="number">1</span>;	<span class="comment">//不存在</span></span><br><span class="line">		<span class="keyword">if</span>(len==<span class="number">1</span> || arr[<span class="number">0</span>]&lt;arr[<span class="number">1</span>])	<span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//如果第一个小于第二个,那么返回第一个</span></span><br><span class="line">		<span class="keyword">if</span>(arr[len-<span class="number">1</span>]&lt;arr[len-<span class="number">2</span>])	<span class="keyword">return</span> len-<span class="number">1</span>;	<span class="comment">//如果最后一个比前一个小,返回最后一个</span></span><br><span class="line">		<span class="type">int</span> left=<span class="number">1</span>,right=len-<span class="number">2</span>;</span><br><span class="line">		<span class="keyword">while</span>(left&lt;=right) &#123;</span><br><span class="line">			<span class="type">int</span> mid=(left+right)&gt;&gt;&gt;<span class="number">1</span>;</span><br><span class="line">			<span class="comment">//如果中间的比左边的大,那么在左边存在局部最小值</span></span><br><span class="line">			<span class="keyword">if</span>(arr[mid]&gt;arr[mid-<span class="number">1</span>]) &#123;</span><br><span class="line">				right=mid-<span class="number">1</span>;</span><br><span class="line">			<span class="comment">//如果比右边的大,那么在右边存在局部最小</span></span><br><span class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(arr[mid]&gt;arr[mid+<span class="number">1</span>]) &#123;</span><br><span class="line">				left=mid+<span class="number">1</span>;</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">return</span> mid;</span><br><span class="line">			&#125;	</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> left;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>对数器的概念和使用</strong></p>
+<blockquote>
+<p>1，有一个你想要测的方法a<br>2，实现复杂度不好但是容易实现的方法b<br>3，实现一个随机样本产生器<br>4，把方法a和方法b跑相同的随机样本，看看得到的结果是否一样。<br>5，如果有一个随机样本使得比对结果不一致，打印样本进行人工干预，改对方法a或者方法b<br>6，当样本数量很多时比对测试依然正确，可以确定方法a已经正确</p>
+</blockquote>
+<p><strong>剖析递归行为和递归行为时间复杂度的估算</strong></p>
+<blockquote>
+<p>用递归方法找一个数组中的最大值，系统上到底是怎么做的？<br>master公式的使用<br>T(N) = a*T(N/b) + O(N^d)</p>
+<ol>
+<li>log(b,a) &gt; d -&gt; 复杂度为O(N^log(b,a))</li>
+<li>log(b,a) = d -&gt; 复杂度为O(N^d * logN)</li>
+<li>log(b,a) &lt; d -&gt; 复杂度为O(N^d)</li>
+</ol>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">宇汐</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">http://example.com/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">宇汐的时光录</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E9%9A%8F%E5%86%99%E8%AE%B0%E5%BD%95/"><img class="prev-cover" src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E6%95%B0%E6%8D%AE%E5%BA%93/"><img class="next-cover" src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/header.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">宇汐</div><div class="author-info__description">喜欢两个词:细水长流,静水深流</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/linxisiyu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/linxisiyu" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1841661433@qq.com" target="_blank" title="给我发邮件"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/485044334?spm_id_from=333.1007.0.0" target="_blank" title="我的B站"><i class="fab fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">细水长流,静水深流</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E6%8E%92%E5%BA%8F%E4%B8%AD%E7%9A%84%E4%BA%A4%E6%8D%A2%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">1.排序中的交换方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">2.排序算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F"><span class="toc-number">2.1.</span> <span class="toc-text">1.选择排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="toc-number">2.2.</span> <span class="toc-text">2.冒泡排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="toc-number">2.3.</span> <span class="toc-text">3.插入排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BA%8C%E5%88%86%E6%B3%95%E6%89%A9%E5%B1%95"><span class="toc-number">2.4.</span> <span class="toc-text">4.二分法扩展</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E9%9A%8F%E5%86%99%E8%AE%B0%E5%BD%95/" title="无题"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E9%9A%8F%E5%86%99%E8%AE%B0%E5%BD%95/" title="无题">无题</a><time datetime="2022-05-17T01:48:37.740Z" title="发表于 2022-05-17 09:48:37">2022-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="无题"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="无题">无题</a><time datetime="2022-05-17T01:48:37.737Z" title="发表于 2022-05-17 09:48:37">2022-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="无题"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="无题">无题</a><time datetime="2022-05-17T01:48:37.719Z" title="发表于 2022-05-17 09:48:37">2022-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E4%B8%AD%E9%97%B4%E4%BB%B6/" title="无题"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E4%B8%AD%E9%97%B4%E4%BB%B6/" title="无题">无题</a><time datetime="2022-05-17T01:48:37.715Z" title="发表于 2022-05-17 09:48:37">2022-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/10/BufferflyTest/" title="测试Butterfly主题"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="测试Butterfly主题"/></a><div class="content"><a class="title" href="/2022/05/10/BufferflyTest/" title="测试Butterfly主题">测试Butterfly主题</a><time datetime="2022-05-10T01:17:02.000Z" title="发表于 2022-05-10 09:17:02">2022-05-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 宇汐</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">嘿嘿,欢迎你来到这里,我们做朋友吧━(*｀∀´*)ノ亻!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
