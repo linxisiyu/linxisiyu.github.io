@@ -1,0 +1,401 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>宇汐的时光录 | 宇汐的时光录</title><meta name="author" content="宇汐"><meta name="copyright" content="宇汐"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1-6题,根据代码分析,主观回答一些问题,某些关键语句的含义,代码改错 第三章p62 例题,无序列表123456789&lt;ul&gt;       编程语言:       &lt;!--不加type默认是实心圆圈       circle表示空心圆点       square表示实心方块--&gt;       &lt;li&gt;java&lt;&#x2F;li&gt;       &lt;li ty">
+<meta property="og:type" content="article">
+<meta property="og:title" content="宇汐的时光录">
+<meta property="og:url" content="http://example.com/2022/05/21/jsp%E8%80%83%E8%AF%95%E8%8C%83%E5%9B%B4/index.html">
+<meta property="og:site_name" content="宇汐的时光录">
+<meta property="og:description" content="1-6题,根据代码分析,主观回答一些问题,某些关键语句的含义,代码改错 第三章p62 例题,无序列表123456789&lt;ul&gt;       编程语言:       &lt;!--不加type默认是实心圆圈       circle表示空心圆点       square表示实心方块--&gt;       &lt;li&gt;java&lt;&#x2F;li&gt;       &lt;li ty">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png">
+<meta property="article:published_time" content="2022-05-21T14:42:36.849Z">
+<meta property="article:modified_time" content="2022-05-21T14:41:54.264Z">
+<meta property="article:author" content="宇汐">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/05/21/jsp%E8%80%83%E8%AF%95%E8%8C%83%E5%9B%B4/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 宇汐","link":"链接: ","source":"来源: 宇汐的时光录","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '宇汐的时光录',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-21 22:41:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/header.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 联系我</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">宇汐的时光录</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 联系我</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-21T14:42:36.849Z" title="发表于 2022-05-21 22:42:36">2022-05-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-21T14:41:54.264Z" title="更新于 2022-05-21 22:41:54">2022-05-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>16分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>1-6题,根据代码分析,主观回答一些问题,某些关键语句的含义,代码改错</p>
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><h3 id="p62-例题-无序列表"><a href="#p62-例题-无序列表" class="headerlink" title="p62 例题,无序列表"></a><strong>p62 例题,无序列表</strong></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">       编程语言:</span><br><span class="line">       <span class="comment">&lt;!--不加type默认是实心圆圈</span></span><br><span class="line"><span class="comment">       circle表示空心圆点</span></span><br><span class="line"><span class="comment">       square表示实心方块--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">li</span>&gt;</span>java<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">li</span> <span class="attr">type</span>=<span class="string">&quot;circle&quot;</span>&gt;</span>c++<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">li</span> <span class="attr">type</span>=<span class="string">&quot;square&quot;</span>&gt;</span>python<span class="tag">&lt;/<span class="name">li</span>&gt;</span> </span><br><span class="line">   <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\张哲\AppData\Roaming\Typora\typora-user-images\1653135930079.png" alt="1653135930079"></p>
+<blockquote>
+<p>注:有序列表是<code>&lt;ol/&gt;</code>标签,默认按代码顺序加入编号</p>
+</blockquote>
+<h3 id="p79-html中如何引入css"><a href="#p79-html中如何引入css" class="headerlink" title="p79 html中如何引入css"></a><strong>p79 html中如何引入css</strong></h3><p>三种方法:</p>
+<p><code>&lt;body/&gt;</code>中的的内容,换行标签<code>&lt;br/&gt;</code>,水平线标签<code>&lt;hr/&gt;</code></p>
+<ol>
+<li><p><strong>嵌入式样式表</strong><br>在标签的 style 属性上设置”key:value value;”,就可以修改标签样式</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color: deepskyblue; font-size: 50px&quot;</span>&gt;</span>嵌入式引入css<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\张哲\AppData\Roaming\Typora\typora-user-images\1653137048996.png" alt="1653137048996"></p>
+<blockquote>
+<p>缺点?</p>
+<p>1.如果标签多了。样式多了。代码量非常庞大。 </p>
+<p>2.可读性非常差。 </p>
+<p>3.Css 代码没什么复用性可方言。</p>
+</blockquote>
+</li>
+<li><p><strong>内联式样式表</strong><br>在 head 标签中，使用 style 标签来定义各种自己需要的 css 样式</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">  <span class="comment">&lt;!--style 标签专门用来定义 css 样式代码--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    &lt;!--分别对应<span class="selector-tag">body</span>中的<span class="selector-tag">h2</span>和<span class="selector-tag">p</span>标签--&gt;</span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">h2</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">font-family</span>: 宋体;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">font-size</span>: <span class="number">13px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">color</span>: deepskyblue;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">p</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">font-family</span>: 宋体;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">font-size</span>: <span class="number">9pt</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">color</span>: blue;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>内联式的样式表,大小13px,字体颜色深天蓝色<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>本段文字字体大小9磅,颜色蓝色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\张哲\AppData\Roaming\Typora\typora-user-images\1653137500460.png" alt="1653137500460"></p>
+<blockquote>
+<p>缺点?</p>
+<p>1.只能在同一页面内复用代码，不能在多个页面中复用 css 代码。 </p>
+<p>2.维护起来不方便，实际的项目中会有成千上万的页面，要到每个页面中去修改。工作量太大了。</p>
+</blockquote>
+</li>
+<li><p><strong>外联式样式表</strong></p>
+<p>把 css 样式写成一个单独的 css 文件，再通过 link 标签引入即可复用。 </p>
+<p>使用 html 的 &lt;link rel=*”stylesheet”* type=*”text/css”* href=*”./styles.css” /*&gt; 标签 导入 css 样 式文件</p>
+<p>StyleSheet.css代码</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: yellow;</span><br><span class="line">    <span class="attribute">color</span>: blue;</span><br><span class="line">    <span class="attribute">font-style</span>: italic; <span class="comment">/*表示斜体*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*课本上使用的class选择器,可以通过html中</span></span><br><span class="line"><span class="comment">  class属性有效的选择性地去使用这个样式*/</span></span><br><span class="line"><span class="selector-class">.text</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">text-decoration</span>: underline; <span class="comment">/*表示字体有下划线*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>html主要代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--link 标签专门用来引入 css 样式代码--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;StyleSheet.css&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span>这段话文字大小为20px,有下滑小<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>本段文字背景为黄色,字体颜色为蓝色,斜体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><img src="C:\Users\张哲\AppData\Roaming\Typora\typora-user-images\1653138372995.png" alt="1653138372995"></p>
+<h3 id="p65-如何插入图片"><a href="#p65-如何插入图片" class="headerlink" title="p65  如何插入图片"></a>p65  如何插入图片</h3><blockquote>
+<p>1：使用 img 标签显示一张照片。并修改宽高，和边框属性<br> img 标签是图片标签,用来显示图片<br> src 属性           设置图片的路径<br> width 属性      设置图片的宽度<br> height 属性     设置图片的高度<br> border 属性    设置图片边框大小<br> alt 属性            设置当指定路径找不到图片时,用来代替显示的文本内容</p>
+<p>在 JavaSE 中路径也分为相对路径和绝对路径.<br>相对路径:从工程名开始算<br>绝对路径:盘符:/目录/文件名<br>在 web 中路径分为相对路径和绝对路径两种<br> 相对路径:<br>   .       表示当前文件所在的目录<br>   ..     表示当前文件所在的上一级目录<br>   文件名  表示当前文件所在目录的文件,相当于./文件名    ./ 可以省略<br> 绝对路径:正确格式是: <a href="http://ip:port/工程名/资源路径">http://ip:port/工程名/资源路径</a><br> 错误格式是: 盘符:/目录/文件名</p>
+</blockquote>
+<p>例3-6    使用img 标签可以在 html 页面上显示图片</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;image/t2.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;魈&quot;</span> <span class="attr">width</span>=<span class="string">&quot;360&quot;</span> <span class="attr">height</span>=<span class="string">&quot;200&quot;</span> <span class="attr">align</span>=<span class="string">&quot;left&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="p67-超链接标签及属性作用"><a href="#p67-超链接标签及属性作用" class="headerlink" title="p67 超链接标签及属性作用"></a>p67 超链接标签及属性作用</h3><p>在网页中所有点击之后可以跳转的内容都是超链接</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">    a 标签是 超链接 href 属性设置连接的地址</span></span><br><span class="line"><span class="comment">    target 属性设置哪个目标进行跳转</span></span><br><span class="line"><span class="comment">		_self 表示当前页面(默认值)</span></span><br><span class="line"><span class="comment">    	_blank 表示打开新页面来进行跳转</span></span><br><span class="line"><span class="comment">  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://space.bilibili.com/485044334?spm_id_from=333.788.0.0&quot;</span>&gt;</span>哔哩哔哩<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://space.bilibili.com/485044334?spm_id_from=333.788.0.0&quot;</span> </span></span><br><span class="line"><span class="tag">     <span class="attr">target</span>=<span class="string">&quot;_self&quot;</span>&gt;</span>哔哩哔哩_self<span class="tag">&lt;/<span class="name">a</span>&gt;</span>	<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://space.bilibili.com/485044334?spm_id_from=333.788.0.0&quot;</span> </span></span><br><span class="line"><span class="tag">     <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span>哔哩哔哩_blank<span class="tag">&lt;/<span class="name">a</span>&gt;</span>	<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="p70-form标签的属性作用"><a href="#p70-form标签的属性作用" class="headerlink" title="p70 form标签的属性作用"></a>p70 form标签的属性作用</h3><p>form表单就是 html 页面中,用来收集用户信息的所有元素集合.然后把这些信息发送给服务器.</p>
+<blockquote>
+<p>写一个小需求:</p>
+<p>创建一个个人信息注册的表单界面。包含用户名，密码，确认密码。性别（单选），兴趣爱好（多选），国籍（下拉列表）。隐藏域，自我评价（多行文本域）。重置，提交</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--常用属性方法及其解释,配合先例子理解</span></span><br><span class="line"><span class="comment">    input type=text 是文件输入框 value 设置默认显示内容</span></span><br><span class="line"><span class="comment">    input type=password 是密码输入框 value 设置默认显示内容</span></span><br><span class="line"><span class="comment">    input type=radio 是单选框 name 属性可以对其进行分组 checked=&quot;checked&quot;表示默认选中</span></span><br><span class="line"><span class="comment">    input type=checkbox 是复选框 checked=&quot;checked&quot;表示默认选中的值</span></span><br><span class="line"><span class="comment">    input type=reset 是重置按钮 	    value属性修改按钮上的文本</span></span><br><span class="line"><span class="comment">    input type=submit 是提交按钮     value属性修改按钮上的文本</span></span><br><span class="line"><span class="comment">    input type=button 是按钮 		 value属性修改按钮上的文本</span></span><br><span class="line"><span class="comment">    input type=file 是文件上传域</span></span><br><span class="line"><span class="comment">    input type=hidden 是隐藏域 当我们要发送某些信息，而这些信息，不需要用户参与，就可以使用隐藏域		（提交的时候同时发送给服务器）</span></span><br><span class="line"><span class="comment">    select 标签是下拉列表框</span></span><br><span class="line"><span class="comment">    option 标签是下拉列表框中的选项</span></span><br><span class="line"><span class="comment">    selected=&quot;selected&quot;设置默认选中</span></span><br><span class="line"><span class="comment">    textarea 表示多行文本输入框 （起始标签和结束标签中的内容是默认值）</span></span><br><span class="line"><span class="comment">    rows 属性设置可以显示几行的高度</span></span><br><span class="line"><span class="comment">    cols 属性设置每行可以显示几个字符宽度 </span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">    用户名称：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">value</span>=<span class="string">&quot;默认值&quot;</span>/&gt;</span>     <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    用户密码：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;abc&quot;</span>/&gt;</span>   <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    确认密码：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;abc&quot;</span>/&gt;</span>   <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    性别：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span>/&gt;</span>男</span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;checked&quot;</span> /&gt;</span>女  <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    兴趣爱好：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;checked&quot;</span> /&gt;</span>Java</span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> /&gt;</span>JavaScript</span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> /&gt;</span>C++<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    国籍：<span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span>&gt;</span>--请选择国籍--<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">selected</span>=<span class="string">&quot;selected&quot;</span>&gt;</span>中国<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span>&gt;</span>美国<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span>&gt;</span>日本<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">select</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    自我评价：<span class="tag">&lt;<span class="name">textarea</span> <span class="attr">rows</span>=<span class="string">&quot;10&quot;</span> <span class="attr">cols</span>=<span class="string">&quot;20&quot;</span>&gt;</span>我才是默认值<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;reset&quot;</span> <span class="attr">value</span>=<span class="string">&quot;重置&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>/&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\张哲\AppData\Roaming\Typora\typora-user-images\1653140120100.png" alt="1653140120100"></p>
+<h2 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h2><h3 id="p171-jsp三种常用注释"><a href="#p171-jsp三种常用注释" class="headerlink" title="p171   jsp三种常用注释"></a>p171   jsp三种常用注释</h3><ol>
+<li>java注释,通常写在jsp中的java代码中<br>例如:<code>&lt;% // 单行 java 注释 %&gt; </code>,<code>&lt;%/*多行 java 代码注释*/%&gt;</code><br>注:单行注释和多行注释能在翻译后的 java 源代码中看见。</li>
+<li>隐藏注释(jsp注释)<br>例如:<code>&lt;%-- 这是jsp 注释 --%&gt;</code><br>注:jsp 注释在翻译的时候会直接被忽略掉 </li>
+<li>html注释<br>例如:<code>&lt;!-- 这是html 注释 --&gt;</code><br>注:html 的注释会被翻译到 java 代码中输出到 html 页面中查看</li>
+</ol>
+<h3 id="p175-176-jsp中的三种脚本"><a href="#p175-176-jsp中的三种脚本" class="headerlink" title="p175-176  jsp中的三种脚本"></a>p175-176  jsp中的三种脚本</h3><ol>
+<li><p><strong>声明脚本</strong></p>
+<blockquote>
+<p><strong>声明脚本格式如下：</strong> </p>
+<p><strong>&lt;%!<br>   java 代码<br>%&gt;</strong> </p>
+<p><strong>在声明脚本块中，我们可以干</strong> <strong>4</strong> <strong>件事情</strong> </p>
+<p>1.我们可以定义全局变量。 </p>
+<p>2.定义 static 静态代码块 </p>
+<p>3.定义方法 </p>
+<p>4.定义内部类 </p>
+<p>几乎可以写在类的内部写的代码，都可以通过声明脚本来实现</p>
+</blockquote>
+</li>
+<li><p><strong>表达式脚本</strong></p>
+<blockquote>
+<p><strong>表达式脚本格式如下：</strong></p>
+<p><strong>&lt;%=表达式 %&gt;</strong> </p>
+<p>表达式脚常用于</p>
+<ol>
+<li>向页面输出内容</li>
+<li>生成动态的连接地址</li>
+<li>动态指定form表单的处理页面</li>
+</ol>
+<p>表达式脚本翻译到 Servlet 程序的 service 方法中以out.print() 打印输出,out 是 jsp 的一个内置对象，用于生成 html 的源代码 </p>
+<p>注意：表达式不要以分号结尾，否则会报错 </p>
+<p>表达式脚本可以输出任意类型。 比如：</p>
+<p>1.输出整型 </p>
+<p>2.输出浮点型 </p>
+<p>3.输出字符串 </p>
+<p>4.输出对象 </p>
+</blockquote>
+</li>
+<li><p><strong>代码脚本</strong></p>
+<blockquote>
+<p><strong>代码脚本如下：</strong> </p>
+<p><strong>&lt;% java 代码 %&gt;</strong> </p>
+<p>代码脚本里可以书写任意的 java 语句。 </p>
+<p>代码脚本的内容都会被翻译到 service 方法中,所以 service 方法中可以写的 java 代码，都可以书写到代码脚本中,所以代码脚本也是jsp中使用最多的</p>
+</blockquote>
+</li>
+</ol>
+<p><strong>掌握理解例题5-5</strong></p>
+<blockquote>
+<p>变量和方法的声明实例</p>
+</blockquote>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--这就是一个声明脚本,定义了一个java中的变量,最后必须以分号结束--%&gt;</span><br><span class="line">&lt;%!</span><br><span class="line">       <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;这是一个变量,在jsp中用java写的变量&quot;</span>;   </span><br><span class="line">   %&gt;</span><br><span class="line">   &lt;%!</span><br><span class="line">       <span class="keyword">public</span> String <span class="title function_">print</span><span class="params">()</span>&#123;    <span class="comment">//声明一个java中的方法</span></span><br><span class="line">           <span class="keyword">return</span> str;</span><br><span class="line">       &#125;</span><br><span class="line">   %&gt;</span><br><span class="line">&lt;%--下面是一个表达式脚本,用于向页面输出内容--%&gt;</span><br><span class="line">   &lt;%=print()%&gt;	</span><br></pre></td></tr></table></figure>
+
+<h3 id="p178-page指令的常用属性有哪些"><a href="#p178-page指令的常用属性有哪些" class="headerlink" title="p178  page指令的常用属性有哪些"></a>p178  page指令的常用属性有哪些</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span> pageEncoding=<span class="string">&quot;UTF-8&quot;</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>上面这是 jsp 文件的头声明。表示这是 jsp 页面。 </p>
+<p>page指令常用属性:</p>
+<ol>
+<li>language 属性值只能是 java。 表示翻译的得到的是 java 语言的</li>
+<li>contentType 属性          设置响应头 contentType 的内容 </li>
+<li>pageEncoding 属性       设置当前 jsp 页面的编码 </li>
+<li>import 属性                    给当前 jsp 页面导入需要使用的类包 </li>
+<li>autoFlush 属性              设置是否自动刷新 out 的缓冲区，默认为 true </li>
+<li>buffer 属性                     设置 out 的缓冲区大小。默认为 8KB </li>
+<li>errorPage 属性              设置当前 jsp 发生错误后，需要跳转到哪个页面去显示错误信息 </li>
+<li>isErrorPage 属性           设置当前 jsp 页面是否是错误页面。是的话，就可以使用 exception 异常对象 </li>
+<li>session 属性                  设置当前 jsp 页面是否获取 session 对象,默认为 true </li>
+<li>extends 属性                 给服务器厂商预留的 jsp 默认翻译的 servlet 继承于什么类</li>
+</ol>
+<h3 id="p182-例题5-10"><a href="#p182-例题5-10" class="headerlink" title="p182  例题5-10"></a>p182  例题5-10</h3><p>​    </p>
+<h3 id="p185-例题5-12"><a href="#p185-例题5-12" class="headerlink" title="p185  例题5-12"></a>p185  例题5-12</h3><p>掌握如何使用include指令加载文件,如何利用<code>include</code>动作加载文件并传参数,指令和动作的根本区别</p>
+<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><p>jsp的内置对象:<br>p221 例6-3  <code>request</code>内置对象的方法及其功能,出现乱码如何解决<br>p210 <code>request</code>的作用及其生命周期</p>
+<h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h2><p>7.2.1  访问mysql数据库及其应用实例<br>7.3     查询数据库及其应用实例,掌握sql语句, <code>statement</code>语句<br>ppt上 7-1, 7-5 例题看懂</p>
+<h2 id="第九章"><a href="#第九章" class="headerlink" title="第九章"></a>第九章</h2><p>p366-367  9-8,9-9<br><code>javabean</code>如何设计?如何调用?调用时间?作用域的四种属性的含义及其区别<br>9-8,9-9 每一行代码的含义</p>
+<h2 id="第十章"><a href="#第十章" class="headerlink" title="第十章"></a>第十章</h2><p>servlet<br>p383-384 10-8 10-9<br>如何配置servlet? doGet,doPost方法如何设计?</p>
+<p>JDBC的功能： </p>
+<p>（1）同一个数据库建立连接； </p>
+<p>（2）向数据库发送SQL语句；</p>
+<p>（3）处理数据库返回的结果</p>
+<p><strong>1.</strong> <strong>应用程序</strong> </p>
+<p>应用程序实现JDBC的连接、发送SQL、然后获取结果的功能，执行以下任务：与数据源请求建立连接；向数据源发送SQL请求；为结果集定义存储应用和数据类型；询问结果；处理错误；控制传输，提交操作；关闭连接。</p>
+<p><strong>2. JDBC API</strong></p>
+<p>JDBC API是一个标准统一的SQL数据存取接口。为Java程序提供统一的操作各种数据库的接口。程序员编程时，不用关心它所要操作的数据库是哪种数据库，从而提高了软件的通用性。只要系统上安装了正确的驱动器组件，JDBC应用程序就可以访问其相关的数据库</p>
+<p><strong>3.</strong> <strong>驱动程序管理器</strong> </p>
+<p>JDBC驱动程序管理器的主要作用是代表用户的应用程序调入特定驱动程序，要完成的任务包括：为特定数据库定位驱动程序；处理JDBC初始化调用等。</p>
+<p><strong>4.</strong> <strong>驱动程序</strong></p>
+<p>驱动程序实现JDBC的连接，向特定数据源发送SQL声明，并且为应用程序获取结果。</p>
+<p><strong>5.</strong> <strong>数据库</strong></p>
+<p>数据库是应用程序想访问的数据源（如Oracle、Microsoft SQL Server、MySQL）。</p>
+<p>【例7-1】使用JDBC驱动访问MySQL的JSP页面（accessMySQL.jsp）</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">&quot;java.sql.DriverManager&quot;</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">&quot;java.sql.ResultSet&quot;</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">&quot;java.sql.Statement&quot;</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">&quot;java.sql.Connection&quot;</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> contentType=<span class="string">&quot;text/html&quot;</span> pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">       	&lt;meta http-equiv=<span class="string">&quot;Content-Type&quot;</span> content=<span class="string">&quot;text/html; charset=UTF-8&quot;</span>&gt;</span><br><span class="line">        &lt;title&gt;通过MySQL的JDBC驱动访问数据库&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    </span><br><span class="line">	&lt;body bgcolor=<span class="string">&quot;pink&quot;</span>&gt;</span><br><span class="line">        &lt;h3 align=<span class="string">&quot;center&quot;</span>&gt;使用MySQL的JDBC驱动访问MySQL数据库&lt;/h3&gt;</span><br><span class="line">        &lt;hr&gt;</span><br><span class="line">        &lt;table border=<span class="string">&quot;1&quot;</span> bgcolor=<span class="string">&quot;#ccceee&quot;</span>  align=<span class="string">&quot;center&quot;</span>&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;th width=<span class="string">&quot;87&quot;</span> align=<span class="string">&quot;center&quot;</span>&gt;学号&lt;/th&gt;</span><br><span class="line">                &lt;th width=<span class="string">&quot;87&quot;</span> align=<span class="string">&quot;center&quot;</span>&gt;姓名&lt;/th&gt;</span><br><span class="line">                &lt;th width=<span class="string">&quot;87&quot;</span> align=<span class="string">&quot;center&quot;</span>&gt;性别&lt;/th&gt;</span><br><span class="line">               	&lt;th width=<span class="string">&quot;87&quot;</span> align=<span class="string">&quot;center&quot;</span>&gt;年龄&lt;/th&gt;</span><br><span class="line">                &lt;th width=<span class="string">&quot;87&quot;</span> align=<span class="string">&quot;center&quot;</span>&gt;体重&lt;/th&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">			&lt;%</span><br><span class="line">               Connection con=<span class="literal">null</span>;</span><br><span class="line">               Statement stmt=<span class="literal">null</span>;</span><br><span class="line">               ResultSet rs=<span class="literal">null</span>;</span><br><span class="line">               Class.forName(“com.mysql.jdbc.Driver”);</span><br><span class="line">               String url=<span class="string">&quot;jdbc:mysql://localhost:3306/student? useUnicode=true&amp;characterEncoding=gbk&quot;</span>;</span><br><span class="line">                con=DriverManager.getConnection(url,<span class="string">&quot;root&quot;</span>,<span class="string">&quot;admin&quot;</span>);</span><br><span class="line">                stmt=con.createStatement();</span><br><span class="line">                String sql=<span class="string">&quot;select * from stuinfo&quot;</span>;</span><br><span class="line">                rs=stmt.executeQuery(sql);</span><br><span class="line">                <span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line">            %&gt;</span><br><span class="line">            </span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">               &lt;td&gt;&lt;%=rs.getString(<span class="string">&quot;SID&quot;</span>)%&gt;&lt;/td&gt;</span><br><span class="line">               &lt;td&gt;&lt;%=rs.getString(<span class="string">&quot;SName&quot;</span>)%&gt;&lt;/td&gt;</span><br><span class="line">               &lt;td&gt;&lt;%=rs.getString(<span class="string">&quot;SSex&quot;</span>)%&gt;&lt;/td&gt;</span><br><span class="line">               &lt;td&gt;&lt;%=rs.getString(<span class="string">&quot;SAge&quot;</span>)%&gt;&lt;/td&gt;</span><br><span class="line">               &lt;td&gt;&lt;%=rs.getString(<span class="string">&quot;SWeight&quot;</span>)%&gt;&lt;/td&gt;                     </span><br><span class="line">           &lt;/tr&gt;</span><br><span class="line">            </span><br><span class="line">         	&lt;%</span><br><span class="line">                &#125;</span><br><span class="line">                rs.close();</span><br><span class="line">                stmt.close();</span><br><span class="line">                con.close();</span><br><span class="line">            %&gt;</span><br><span class="line">	&lt;/table&gt;</span><br><span class="line">       &lt;hr&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>【例7-5】ResultSet对象的游标滚动（ResultSetSQL.jsp）</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">&quot;java.sql.*&quot;</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> contentType=<span class="string">&quot;text/html&quot;</span> pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta http-equiv=<span class="string">&quot;Content-Type&quot;</span> content=<span class="string">&quot;text/html; charset=UTF-8&quot;</span>&gt;</span><br><span class="line">        &lt;title&gt;ResultSet方法使用&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h2&gt;使用ResultSet方法访问SQL Server <span class="number">2008</span>&lt;/h2&gt;</span><br><span class="line">        &lt;hr&gt; </span><br><span class="line">        &lt;table border=<span class="string">&quot;2&quot;</span> bgcolor=<span class="string">&quot;ccceee&quot;</span> align=<span class="string">&quot;center&quot;</span>&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;th&gt;学号&lt;/th&gt;</span><br><span class="line">                &lt;th&gt;姓名&lt;/th&gt;</span><br><span class="line">                &lt;th&gt;性别&lt;/th&gt;</span><br><span class="line">                &lt;th&gt;年龄&lt;/th&gt;</span><br><span class="line">                &lt;th&gt;体重&lt;/th&gt;</span><br><span class="line">            &lt;/tr&gt; </span><br><span class="line">&lt;%</span><br><span class="line">Class.forName(<span class="string">&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;</span>);</span><br><span class="line">                String url=<span class="string">&quot;jdbc:sqlserver://localhost:1433;databasename=student&quot;</span>;</span><br><span class="line">                String user=<span class="string">&quot;sa&quot;</span>;</span><br><span class="line">                String password=<span class="string">&quot;root&quot;</span>;</span><br><span class="line">                Connection conn=DriverManager.getConnection(url,user,password);</span><br><span class="line">                Statement stmt=conn.createStatement(</span><br><span class="line">				ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_READ_ONLY);</span><br><span class="line">                String sql=<span class="string">&quot;select * from info&quot;</span>; </span><br><span class="line">                ResultSet rs=stmt.executeQuery(sql);</span><br><span class="line">                rs.last();</span><br><span class="line">                rs.afterLast();</span><br><span class="line">                <span class="keyword">while</span>(rs.previous())&#123;</span><br><span class="line">            %&gt; </span><br><span class="line"> &lt;tr&gt;</span><br><span class="line">              &lt;td&gt;&lt;%=rs.getString(<span class="string">&quot;studentNumber&quot;</span>)%&gt; &lt;/td&gt;</span><br><span class="line">               &lt;td&gt;&lt;%=rs.getString(<span class="string">&quot;studentName&quot;</span>)%&gt; &lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&lt;%=rs.getString(<span class="string">&quot;studentSex&quot;</span>)%&gt; &lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&lt;%=rs.getString(<span class="string">&quot;studentAge&quot;</span>)%&gt; &lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&lt;%=rs.getString(<span class="string">&quot;studentWeight&quot;</span>)%&gt; &lt;/td&gt;</span><br><span class="line">           &lt;/tr&gt;</span><br><span class="line">            &lt;%</span><br><span class="line">              &#125;</span><br><span class="line">                 rs.close();</span><br><span class="line">                 stmt.close();</span><br><span class="line">                 conn.close();</span><br><span class="line">            %&gt;</span><br><span class="line">	&lt;/table&gt;</span><br><span class="line">         &lt;hr&gt;</span><br><span class="line">    &lt;/center&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt; </span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">宇汐</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/05/21/jsp%E8%80%83%E8%AF%95%E8%8C%83%E5%9B%B4/">http://example.com/2022/05/21/jsp%E8%80%83%E8%AF%95%E8%8C%83%E5%9B%B4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">宇汐的时光录</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/05/19/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E9%93%BE%E8%A1%A8,%E6%A0%91,%E5%9B%BE/"><img class="next-cover" src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">链表</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/header.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">宇汐</div><div class="author-info__description">喜欢两个词:细水长流,静水深流</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/linxisiyu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/linxisiyu" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1841661433@qq.com" target="_blank" title="给我发邮件"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/485044334?spm_id_from=333.1007.0.0" target="_blank" title="我的B站"><i class="fab fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">细水长流,静水深流</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0"><span class="toc-number">1.</span> <span class="toc-text">第三章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#p62-%E4%BE%8B%E9%A2%98-%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">1.1.</span> <span class="toc-text">p62 例题,无序列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#p79-html%E4%B8%AD%E5%A6%82%E4%BD%95%E5%BC%95%E5%85%A5css"><span class="toc-number">1.2.</span> <span class="toc-text">p79 html中如何引入css</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#p65-%E5%A6%82%E4%BD%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87"><span class="toc-number">1.3.</span> <span class="toc-text">p65  如何插入图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#p67-%E8%B6%85%E9%93%BE%E6%8E%A5%E6%A0%87%E7%AD%BE%E5%8F%8A%E5%B1%9E%E6%80%A7%E4%BD%9C%E7%94%A8"><span class="toc-number">1.4.</span> <span class="toc-text">p67 超链接标签及属性作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#p70-form%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B1%9E%E6%80%A7%E4%BD%9C%E7%94%A8"><span class="toc-number">1.5.</span> <span class="toc-text">p70 form标签的属性作用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0"><span class="toc-number">2.</span> <span class="toc-text">第五章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#p171-jsp%E4%B8%89%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%B3%A8%E9%87%8A"><span class="toc-number">2.1.</span> <span class="toc-text">p171   jsp三种常用注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#p175-176-jsp%E4%B8%AD%E7%9A%84%E4%B8%89%E7%A7%8D%E8%84%9A%E6%9C%AC"><span class="toc-number">2.2.</span> <span class="toc-text">p175-176  jsp中的三种脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#p178-page%E6%8C%87%E4%BB%A4%E7%9A%84%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">2.3.</span> <span class="toc-text">p178  page指令的常用属性有哪些</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#p182-%E4%BE%8B%E9%A2%985-10"><span class="toc-number">2.4.</span> <span class="toc-text">p182  例题5-10</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#p185-%E4%BE%8B%E9%A2%985-12"><span class="toc-number">2.5.</span> <span class="toc-text">p185  例题5-12</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0"><span class="toc-number">3.</span> <span class="toc-text">第六章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0"><span class="toc-number">4.</span> <span class="toc-text">第七章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0"><span class="toc-number">5.</span> <span class="toc-text">第九章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E7%AB%A0"><span class="toc-number">6.</span> <span class="toc-text">第十章</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/21/jsp%E8%80%83%E8%AF%95%E8%8C%83%E5%9B%B4/" title="无题"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/21/jsp%E8%80%83%E8%AF%95%E8%8C%83%E5%9B%B4/" title="无题">无题</a><time datetime="2022-05-21T14:42:36.849Z" title="发表于 2022-05-21 22:42:36">2022-05-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/19/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E9%93%BE%E8%A1%A8,%E6%A0%91,%E5%9B%BE/" title="链表"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="链表"/></a><div class="content"><a class="title" href="/2022/05/19/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E9%93%BE%E8%A1%A8,%E6%A0%91,%E5%9B%BE/" title="链表">链表</a><time datetime="2022-05-19T00:55:55.200Z" title="发表于 2022-05-19 08:55:55">2022-05-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E9%9A%8F%E5%86%99%E8%AE%B0%E5%BD%95/" title="无题"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E9%9A%8F%E5%86%99%E8%AE%B0%E5%BD%95/" title="无题">无题</a><time datetime="2022-05-17T01:48:37.740Z" title="发表于 2022-05-17 09:48:37">2022-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="排序算法"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="排序算法"/></a><div class="content"><a class="title" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E7%AE%97%E6%B3%95%E6%B0%B8%E8%BF%9C%E7%9A%84%E7%97%9B/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="排序算法">排序算法</a><time datetime="2022-05-17T01:48:37.737Z" title="发表于 2022-05-17 09:48:37">2022-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="无题"><img src="https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/17/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="无题">无题</a><time datetime="2022-05-17T01:48:37.719Z" title="发表于 2022-05-17 09:48:37">2022-05-17</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://siyu-1314.oss-cn-beijing.aliyuncs.com/%E5%8D%9A%E5%AE%A2/background.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 宇汐</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">嘿嘿,欢迎你来到这里,我们做朋友吧━(*｀∀´*)ノ亻!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
